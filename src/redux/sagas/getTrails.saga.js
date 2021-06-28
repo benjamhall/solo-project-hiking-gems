@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* getAllTrails () {
     try {
-        const trails = yield axios.get('/api/movie');
+        const trails = yield axios.get('/api/trail');
         console.log('get all:', trails.data);
         yield put({ type: 'SET_TRAILS', payload: trails.data });
 

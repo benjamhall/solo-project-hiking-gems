@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -31,7 +31,7 @@ function HikingList() {
                 <ol>
                 {trails.map(hike => {
                 return (
-                    <li key={hike.id}>{hike.name}{hike.location}{hike.description}
+                    <li key={hike.id}>{hike.name}{hike.location}
                     <Button onClick={handleDetail} type="submit" variant="contained" color="secondary">Learn More</Button></li>
                 )
             })}

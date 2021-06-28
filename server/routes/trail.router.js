@@ -8,7 +8,7 @@ const router = express.Router();
 
 //sends a get request to the database for all of the trails
 router.get('/', (req, res) => {
-    const query = `SELECT * FROM hike ORDER BY "id" ASC`;
+    const query = `SELECT * FROM "hike" ORDER BY "id" ASC`;
     pool.query(query)
         .then(result => {
             res.send(result.rows);
