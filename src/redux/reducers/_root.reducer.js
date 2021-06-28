@@ -13,4 +13,6 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
 });
 
+//.this.props.store.errors.loginMessage
+
 export default rootReducer;
