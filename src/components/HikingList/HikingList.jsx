@@ -1,4 +1,3 @@
-import { TrainOutlined } from '@material-ui/icons';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -12,10 +11,12 @@ function HikingList() {
     const history = useHistory();
     const trails = useSelector(store => store.trails);
 
+    // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
         dispatch({type: 'FETCH_TRAILS'})
     }, []);
 
+    // This function handles the Learn More button and brings the user to the Hike Details page for that specific trail
     const handleDetail = () => {
         console.log('learn more button clicked')
         //history.pushState('/details')
