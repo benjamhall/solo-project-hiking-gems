@@ -18,6 +18,7 @@ class TemplateClass extends Component {
     return (
       <div>
         <h2>{this.state.heading}</h2>
+        <h3>Test TemplateClass</h3>
       </div>
     );
   }
