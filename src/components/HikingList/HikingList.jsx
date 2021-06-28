@@ -1,15 +1,19 @@
 import { TrainOutlined } from '@material-ui/icons';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 function HikingList() {
 
     // const store = useSelector((store) => store);
     // const [heading, setHeading] = useState('Functional Component');
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const trails = useSelector(store => store.trails);
 
     useEffect(() => {
-        dispatchEvent({type: 'FETCH_TRAILS'})
+        dispatch({type: 'FETCH_TRAILS'})
     }, []);
 
     const handleDetail = () => {
@@ -24,7 +28,7 @@ function HikingList() {
         </div>
             <section>
                 <ol>
-                {hikingList.map(trail => {
+                {trails.map(hike => {
                 return (
                     <li key={hike.id}>{hike.name}{hike.location}{hike.description}
                     <Button onClick={handleDetail} type="submit" variant="contained" color="secondary">Learn More</Button></li>
