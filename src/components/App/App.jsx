@@ -14,6 +14,7 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
+import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -57,6 +58,14 @@ function App() {
             path="/homePage"
           >
             <HomePage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/list"
+          >
+            <HikingList />
           </ProtectedRoute>
 
           <ProtectedRoute

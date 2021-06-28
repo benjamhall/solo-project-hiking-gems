@@ -32,7 +32,11 @@ function Nav() {
             <Link className="navLink" to="/info">
               Info Page
             </Link>
+            <Link className="navLink" to="/list">
+              Best Hiking Trails
+            </Link>
             <LogOutButton className="navLink" />
+            
           </>
         )}
 
