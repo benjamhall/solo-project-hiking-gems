@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
+import AddHike from '../AddHike/AddHike';
 import AboutPage from '../AboutPage/AboutPage';
 import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
@@ -61,11 +62,19 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
+            // logged in shows Hiking List else shows LoginPage
             exact
             path="/list"
           >
             <HikingList />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Add Hike else shows LoginPage
+            exact
+            path="/add"
+          >
+            <AddHike />
           </ProtectedRoute>
 
           <ProtectedRoute

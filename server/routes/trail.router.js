@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
     // This query makes the new hike entry
     pool.query(insertHikeQuery, [req.body.name, req.body.location, req.body.description])
     .then(result => {
-        console.log('New HIke Id:', result.rows[0].id) // We have the Id
+        console.log('New Hike Id:', result.rows[0].id) // We have the Id
 
         //const createdHikeId = result.rows[0].id
 
