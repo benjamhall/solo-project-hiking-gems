@@ -9,6 +9,10 @@ function AddHike() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    let [name, setName] = useState('')
+    let [location, setLocation] = useState('')
+    let [description, setDescription] = useState('')
+
     return (
         <div>
             <h2>Add a Hike</h2>
