@@ -31,7 +31,29 @@ function AddHike() {
 
     // This function handles the change of the description input
     const handleDescriptionChange = (event) => {
-        
+        console.log('description event changed')
+
+        // Sets the local state of setDescription equal to the value of the input
+        setDescription(event.target.value)
+    }
+
+    // This function handles the cancel button which upon click will bring the user back to the home page
+    const handleCancel = () => {
+        console.log('cancel button clicked')
+
+        //Routes the user back to the home page
+        history.goBack()
+    }
+
+    // This function handles the save button and sends the information in the inputs to the reducer
+    const postHike = () => {
+        console.log('save button clicked')
+
+        // Dispatches the information from the inputs to the reducer
+        dispatch({type: 'POST_HIKE', payload: {name: name, location: location, description: description}})
+
+        // Sends the user to the Review Page
+        //history.push('/review')
     }
 
     return (
@@ -53,7 +75,7 @@ function AddHike() {
 
             </form>
             <Button onClick={handleCancel} type="submit" variant="contained" color="secondary"></Button>
-            <Button onClick={handleSave} type="submit" variant="contained" color="secondary"></Button>
+            <Button onClick={postHike} type="submit" variant="contained" color="secondary"></Button>
         </div>
     );
 }
