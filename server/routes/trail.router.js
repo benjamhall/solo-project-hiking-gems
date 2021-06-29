@@ -1,10 +1,11 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
 
 // Sends a get request to the database for all of the trails
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     const query = `SELECT * FROM "hike" ORDER BY "id" ASC`;
     pool.query(query)
         .then(result => {
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
 
 
 // Sends a post request to the database and adds the new data
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
     console.log(req.body);
     
     // Returning "id" will give us back the id of the created hike
