@@ -1,11 +1,11 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* postHike() {
+function* postNewHike(action) {
     try {
-        const trails = yield axios.get('/api/trail');
-        console.log('get all:', trails.data);
-        yield put({ type: 'SET_TRAILS', payload: trails.data });
+        const response = yield axios.post('/api/trail', action.payload);
+        console.log('get all:', response.data);
+        yield put({ type: 'FETCH_TRAILS', payload: trails.data });
 
     } catch {
         console.log('get all error');
@@ -13,7 +13,7 @@ function* postHike() {
 }
 
 function* postHikeSaga() {
-    yield takeLatest('POST_HIKE', postHike);
+    yield takeLatest('POST_HIKE', postNewHike);
 }
 
 export default postHikeSaga;
