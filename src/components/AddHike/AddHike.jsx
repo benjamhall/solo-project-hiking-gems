@@ -13,6 +13,16 @@ function AddHike() {
     let [location, setLocation] = useState('')
     let [description, setDescription] = useState('')
 
+    // This function handles the change of the name input
+    const handleNameChange = (event) => {
+        console.log('name changed')
+
+        // Sets the local state of setName equal to the value of the input
+        setName(event.target.value)
+    }
+
+    
+
     return (
         <div>
             <h2>Add a Hike</h2>
