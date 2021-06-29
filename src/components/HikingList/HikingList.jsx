@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
+// This function lists all of the hiking trails 
 function HikingList() {
 
     // const store = useSelector((store) => store);
