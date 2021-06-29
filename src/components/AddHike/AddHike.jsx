@@ -53,7 +53,7 @@ function AddHike() {
         dispatch({type: 'POST_HIKE', payload: {name: name, location: location, description: description}})
 
         // Sends the user to the Review Page
-        //history.push('/review')
+        history.push('/list')
     }
 
     return (
@@ -74,8 +74,8 @@ function AddHike() {
                 id="outlined-basic" label="Description of Trail" variant="outlined" />
 
             </form>
-            <Button onClick={handleCancel} type="submit" variant="contained" color="secondary"></Button>
-            <Button onClick={postHike} type="submit" variant="contained" color="secondary"></Button>
+            <Button onClick={handleCancel} type="submit" variant="contained" color="secondary">Cancel</Button>
+            <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
         </div>
     );
 }

@@ -32,7 +32,7 @@ function HikingList() {
                 <ol>
                 {trails.map(hike => {
                 return (
-                    <li key={hike.id}>{hike.name}{hike.location}
+                    <li key={hike.id}>{hike.name}: {hike.location}
                     <Button onClick={handleDetail} type="submit" variant="contained" color="secondary">Learn More</Button></li>
                 )
             })}
