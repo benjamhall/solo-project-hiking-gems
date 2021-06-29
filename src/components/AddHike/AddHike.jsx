@@ -15,13 +15,24 @@ function AddHike() {
 
     // This function handles the change of the name input
     const handleNameChange = (event) => {
-        console.log('name changed')
+        console.log('name event changed')
 
         // Sets the local state of setName equal to the value of the input
         setName(event.target.value)
     }
 
-    
+    // This function handles the change of the location input
+    const handleLocationChange = (event) => {
+        console.log('location event changed')
+
+        // Sets the local state of setLocation equal to the value of the input
+        setLocation(event.target.value)
+    }
+
+    // This function handles the change of the description input
+    const handleDescriptionChange = (event) => {
+        
+    }
 
     return (
         <div>
