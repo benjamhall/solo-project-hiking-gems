@@ -42,4 +42,25 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     })
 });
 
+// Sends a put request to the database to update 
+router.put('/id', rejectUnauthenticated, (req, res) => {
+    let hikeId = req.params.id;
+    console.log('Hike Id in router.put is', hikeId);
+
+    let updatedHike = req.body;
+    console.log('the updated hike is', updatedHike);
+
+    let query = `UPDATE "hike" SET "name" = $1
+                    WHERE "hike".id = $2;`
+    pool.query(query, [updatedHike.name, hikeId])
+    .then(response => {
+        console.log(response.rowCount);
+        res.sendStatus(202)
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    })
+});
+
+
 module.exports = router;
