@@ -14,8 +14,8 @@ function EditHike() {
 
     console.log('trail', trail)
 
-    const handleEdit = (event, taco) => {
-        dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: taco, value: event.target.value } })
+    const handleEdit = (event, newTrailInfo) => {
+        dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: newTrailInfo, value: event.target.value } })
     }
 
     const handleSubmit = (event) => {
