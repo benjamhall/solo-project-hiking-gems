@@ -10,12 +10,12 @@ function EditHike() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const trail = useSelector((store) => store.edit?.trailId);
+    const trail = useSelector((store) => store.edit);
 
     console.log('trail', trail)
 
-    const handleEdit = (event) => {
-        dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: 'name', value: event.target.value } })
+    const handleEdit = (event, taco) => {
+        dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: taco, value: event.target.value } })
     }
 
     const handleSubmit = (event) => {
@@ -34,7 +34,9 @@ function EditHike() {
         <div>
             <h2>Edit</h2>
             <form>
-                <TextField onChange={(event) => handleEdit(event)} value={trail} type="text" placeholder="New Trail Name" />
+                <TextField onChange={(event) => handleEdit(event, 'name')} value={trail.name} type="text" placeholder="New Trail Name" />
+                <TextField onChange={(event) => handleEdit(event, 'location')} value={trail.location} type="text" placeholder="New Trail Location" />
+                <TextField onChange={(event) => handleEdit(event, 'description')} value={trail.description} type="text" placeholder="New Trail Description" />
                 <Button onClick={handleSubmit}>Submit</Button>
             </form>
         </div>

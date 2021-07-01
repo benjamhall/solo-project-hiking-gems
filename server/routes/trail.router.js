@@ -4,7 +4,7 @@ const router = express.Router();
 const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
 
-// Sends a get request to the database for all of the trails
+// Sends a Get request to the database for all of the trails
 router.get('/', rejectUnauthenticated, (req, res) => {
     const query = `SELECT * FROM "hike" ORDER BY "id" ASC`;
     pool.query(query)
@@ -15,10 +15,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
             console.log('ERROR: Get all trails', err);
             res.sendStatus(500)
         })
-});
+}); // End of the Get route
 
 
-// Sends a post request to the database and adds the new data
+// Sends a Post request to the database and adds the new data
 router.post('/', rejectUnauthenticated, (req, res) => {
     console.log(req.body);
     
@@ -40,19 +40,19 @@ router.post('/', rejectUnauthenticated, (req, res) => {
         console.log(err);
         res.sendStatus(500)
     })
-});
+}); // End of Post Route
 
-// Sends a put request to the database to update 
-router.put('/id', rejectUnauthenticated, (req, res) => {
+// Sends a Put request to the database to update that Hike in the database
+router.put('/:id', rejectUnauthenticated, (req, res) => {
     let hikeId = req.params.id;
     console.log('Hike Id in router.put is', hikeId);
 
     let updatedHike = req.body;
     console.log('the updated hike is', updatedHike);
 
-    let query = `UPDATE "hike" SET "name" = $1
-                    WHERE "hike".id = $2;`
-    pool.query(query, [updatedHike.name, hikeId])
+    let query = `UPDATE "hike" SET "name" = $1, "location" = $2, "description" = $3
+                    WHERE "hike".id = $4;`
+    pool.query(query, [updatedHike.name, updatedHike.location, updatedHike.description, hikeId])
     .then(response => {
         console.log(response.rowCount);
         res.sendStatus(202)
@@ -60,7 +60,27 @@ router.put('/id', rejectUnauthenticated, (req, res) => {
         console.log(err);
         res.sendStatus(500);
     })
-});
+}); //End of Put Route
+
+
+// Delete a hike in the database
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+    let hikeId = req.params.id;
+    console.log('Received Request to delete ', hikeId);
+    console.log('req.params', req.params)
+    
+    
+    const query = `DELETE FROM "hike" WHERE "id" = $1;`;
+    
+    pool.query(query, [hikeId])
+    .then((result) => {
+        console.log('Hike deleted', result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error in deleting hike', error);
+        res.sendStatus(500);
+    })
+}) //End of Delete Route
 
 
 module.exports = router;
