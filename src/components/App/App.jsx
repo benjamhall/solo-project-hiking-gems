@@ -15,6 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AddHike from '../AddHike/AddHike';
 import AboutPage from '../AboutPage/AboutPage';
+import EditHike from '../EditHike/EditHike';
 import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
 import UserPage from '../UserPage/UserPage';
@@ -22,6 +23,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Review from '../Review/Review';
 
 import './App.css';
 
@@ -75,6 +77,22 @@ function App() {
             path="/add"
           >
             <AddHike />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Review page else shows LoginPage
+            exact
+            path="/review"
+          >
+            <Review />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Edit Hike else shows LoginPage
+            exact
+            path="/edit"
+          >
+            <EditHike />
           </ProtectedRoute>
 
           <ProtectedRoute

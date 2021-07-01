@@ -53,7 +53,7 @@ function AddHike() {
         dispatch({type: 'POST_HIKE', payload: {name: name, location: location, description: description}})
 
         // Sends the user to the Review Page
-        history.push('/list')
+        history.push('/review')
     }
 
     return (

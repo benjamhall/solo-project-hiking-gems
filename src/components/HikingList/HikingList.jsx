@@ -5,9 +5,6 @@ import Button from '@material-ui/core/Button';
 
 // This function lists all of the hiking trails 
 function HikingList() {
-
-    // const store = useSelector((store) => store);
-    // const [heading, setHeading] = useState('Functional Component');
     const dispatch = useDispatch();
     const history = useHistory();
     const trails = useSelector(store => store.trails);

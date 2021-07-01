@@ -1,7 +1,8 @@
 const editReducer = (state = {}, action) => {
     switch (action.type) {
         case 'EDIT_HIKE' :
-            return action.payload;
+            console.log(action.payload)
+            return {trailId: action.payload};
         case 'EDIT_ON_CHANGE':
             return {...state, [action.payload.property]: action.payload.value}
         case 'CLEAR_EDIT':
