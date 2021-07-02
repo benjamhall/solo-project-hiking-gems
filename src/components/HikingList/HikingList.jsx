@@ -17,6 +17,7 @@ function HikingList() {
     // This function handles the Learn More button and brings the user to the Hike Details page for that specific trail
     const hikeDetails = (details) => {
         console.log('details are', details)
+        
         // This dispatch request the hike details and stops first at the generator in the reducer
         dispatch({type: 'HIKE_DETAILS', payload: details})
 
