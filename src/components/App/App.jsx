@@ -14,8 +14,9 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AddHike from '../AddHike/AddHike';
-import AboutPage from '../AboutPage/AboutPage';
+import AboutPage from '../AboutPage/AboutPage'
 import EditHike from '../EditHike/EditHike';
+import HikeDetails from '../HikeDetails/HikeDetails';
 import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
 import UserPage from '../UserPage/UserPage';
@@ -93,6 +94,14 @@ function App() {
             path="/edit"
           >
             <EditHike />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Edit Hike else shows LoginPage
+            exact
+            path="/details"
+          >
+            <HikeDetails />
           </ProtectedRoute>
 
           <ProtectedRoute
