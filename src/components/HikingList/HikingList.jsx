@@ -15,9 +15,13 @@ function HikingList() {
     }, []);
 
     // This function handles the Learn More button and brings the user to the Hike Details page for that specific trail
-    const handleDetail = () => {
-        console.log('learn more button clicked')
-        //history.pushState('/details')
+    const hikeDetails = (details) => {
+        console.log('details are', details)
+        // This dispatch request the hike details and stops first at the generator in the reducer
+        dispatch({type: 'HIKE_DETAILS', payload: details})
+
+        // Sends the user to the details page
+        history.push('/details')
     }
 
     return (
@@ -30,7 +34,7 @@ function HikingList() {
                 {trails.map(hike => {
                 return (
                     <li key={hike.id}>{hike.name}: {hike.location}
-                    <Button onClick={handleDetail} type="submit" variant="contained" color="secondary">Learn More</Button></li>
+                    <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button></li>
                 )
             })}
             </ol>

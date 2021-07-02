@@ -25,16 +25,17 @@ function Review() {
             confirmButtonText: 'Yes!',
             showCancelButton: true,
         }).then((result) => {
-            dispatch({ type: 'REMOVE_HIKE', payload: trail })
+            
             if(result.value) {
                 Swal.fire({
                     title: "hike deleted",
                     icon: "success",
                 })
-                
+                dispatch({ type: 'REMOVE_HIKE', payload: trail })
+            } else {
+                Swal.fire("Hike not deleted")
             }
         })
-        
     }
 
     const handleEdit = (event, trail) => {
@@ -44,7 +45,7 @@ function Review() {
         history.push('/edit');
     }
 
-    //console.log('trail', trail?.)
+ 
     return (
         
         <div>
@@ -57,8 +58,8 @@ function Review() {
                         {trail?.name}
                         {trail?.location}
                         {trail?.description}
-                        <button onClick={(event) => handleEdit(event, trail)}>Edit</button>
-                        <button onClick={() => handleDelete(trail)}>Delete</button>
+                        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
+                        <Button onClick={() => handleDelete(trail)}>Delete</Button>
                     </div>
                 )})}
             </div>

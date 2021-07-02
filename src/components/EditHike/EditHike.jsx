@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 
-
+// This function handles Editing and updating the information for a hike
 function EditHike() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -18,6 +18,7 @@ function EditHike() {
         dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: newTrailInfo, value: event.target.value } })
     }
 
+    // This function handles the Submit button 
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.put(`/api/trail/${trail.id}`, trail)
