@@ -18,9 +18,14 @@ function HikeDetails() {
         history.push('/edit');
     }
 
+    // This funciton handles the back button and upon click sends the user back to the previous page they were at
     const handleBack = () => {
         console.log('Back button clicked"')
+
+        //Routes the user back to the details list or the list page they were at
+        history.goBack()
     }
+
 
     return (
         <div>
