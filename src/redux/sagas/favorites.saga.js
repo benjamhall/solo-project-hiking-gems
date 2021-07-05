@@ -3,9 +3,11 @@ import axios from 'axios';
 
 function* addFavorite() {
     try {
-        yield axios.put('/api/ratings');
+        // Axios request to add hike to the user's favorites
+        yield axios.put(`/api/ratings/favorite`, {hikeId: action.payload});
         console.log('get all:', trails.data);
-        yield put({ type: 'SET_TRAILS', payload: trails.data });
+
+        yield put({ type: 'FETCH_FAVORITES', payload: action.payload });
 
     } catch {
         console.log('Error in favoritesSaga', error);
