@@ -10,15 +10,16 @@ function HikeDetails() {
     const trail = useSelector((store) => store.trails);
     const details = useSelector((store) => store.details);
     
+    // This function handles the edit button and sends the user to the edit page to edit the existing information of that particular hike
     const handleEdit = (event, trail) => {
         console.log('trail', trail)
-        
         // Dispatches to the reducer 
         dispatch({ type: 'EDIT_HIKE', payload: trail })
+        // Sends the user to the edit page
         history.push('/edit');
     }
 
-    // This funciton handles the back button and upon click sends the user back to the previous page they were at
+    // This function handles the back button and upon click sends the user back to the previous page they were at
     const handleBack = () => {
         console.log('Back button clicked"')
 
@@ -29,16 +30,16 @@ function HikeDetails() {
 
     return (
         <div>
-            <div>
+            <div key={trail?.id}>
                 <h2>Hike Details:</h2>
                 <p>{details.name}</p>
                 <p>{details.location}</p>
                 <p>{details.description}</p>
             </div>
         <Button>Favorite</Button>
-        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
         <Button>Rate</Button>
-        <Button onClick={handleBack}>Back to the List</Button>
+        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
+        <Button onClick={handleBack}>Back</Button>
         </div>
         
     );

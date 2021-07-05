@@ -42,8 +42,9 @@ function Review() {
     const handleEdit = (event, trail) => {
         console.log('trail', trail)
         
-        // Dispatches the 
+        // Dispatches the Edit Hike type to the edit reducer sending the information of trail in the payload
         dispatch({type: 'EDIT_HIKE', payload: trail})
+        // Sends the user to the edit page
         history.push('/edit');
     }
 

@@ -35,9 +35,9 @@ function EditHike() {
         <div>
             <h2>Edit</h2>
             <form>
-                <TextField onChange={(event) => handleEdit(event, 'name')} value={trail.name} type="text" placeholder="New Trail Name" />
-                <TextField onChange={(event) => handleEdit(event, 'location')} value={trail.location} type="text" placeholder="New Trail Location" />
-                <TextField onChange={(event) => handleEdit(event, 'description')} value={trail.description} type="text" placeholder="New Trail Description" />
+                <TextField onChange={(event) => handleEdit(event, 'name')} value={trail.name} type="text" placeholder="Edit Trail Name" />
+                <TextField onChange={(event) => handleEdit(event, 'location')} value={trail.location} type="text" placeholder="Edit Trail Location" />
+                <TextField onChange={(event) => handleEdit(event, 'description')} value={trail.description} type="text" placeholder="Edit Trail Description" />
                 <Button onClick={handleSubmit}>Submit</Button>
             </form>
         </div>

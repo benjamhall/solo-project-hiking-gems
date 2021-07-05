@@ -16,6 +16,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AddHike from '../AddHike/AddHike';
 import AboutPage from '../AboutPage/AboutPage'
 import EditHike from '../EditHike/EditHike';
+import FavoriteHikes from '../FavoriteHikes/FavoriteHikes';
 import HikeDetails from '../HikeDetails/HikeDetails';
 import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
@@ -78,6 +79,14 @@ function App() {
             path="/add"
           >
             <AddHike />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Add Hike else shows LoginPage
+            exact
+            path="/favorite"
+          >
+            <FavoriteHikes />
           </ProtectedRoute>
 
           <ProtectedRoute

@@ -41,6 +41,10 @@ function Nav() {
               Add Hike
             </Link>
 
+            <Link className="navLink" to="/favorite">
+              Favorites
+            </Link>
+
             <LogOutButton className="navLink" />
             
           </>
