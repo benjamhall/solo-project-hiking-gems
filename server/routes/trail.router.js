@@ -33,14 +33,13 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     .then(result => {
         console.log('New Hike Id:', result.rows[0].id) // We have the Id
 
-        //const createdHikeId = result.rows[0].id
-
     // Catch for the query
     }).catch(err => {
         console.log(err);
         res.sendStatus(500)
     })
 }); // End of Post Route
+
 
 // Sends a Put request to the database to update that Hike in the database
 router.put('/:id', rejectUnauthenticated, (req, res) => {
