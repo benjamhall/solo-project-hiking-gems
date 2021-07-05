@@ -8,7 +8,7 @@ function* postNewHike(action) {
         yield put({ type: 'FETCH_TRAILS', payload: trails.data });
 
     } catch {
-        console.log('get all error');
+        console.log('post New Hike Saga error');
     }
 }
 

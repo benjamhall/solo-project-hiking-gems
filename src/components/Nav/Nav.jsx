@@ -5,6 +5,8 @@ import './Nav.css';
 import {useSelector} from 'react-redux';
 
 function Nav() {
+
+  
   const user = useSelector((store) => store.user);
 
   let loginLinkData = {
@@ -13,7 +15,7 @@ function Nav() {
   };
 
   if (user.id != null) {
-    loginLinkData.path = '/user';
+    loginLinkData.path = '/homePage';
     loginLinkData.text = 'Home';
   }
 
