@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 // import './Nav.css';
 import {useSelector} from 'react-redux';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+// Material UI Imports 
+import { makeStyles } from '@material-ui/core/styles';
 
 function Nav() {
   // Material UI
