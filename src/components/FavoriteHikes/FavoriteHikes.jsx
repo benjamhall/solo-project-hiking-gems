@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Material UI components
 import Button from '@material-ui/core/Button';
@@ -32,7 +32,7 @@ function FavoriteHikes() {
                     <ol>
                         {favorites.map(favorite => {
                             return (
-                                <li key={favorite.id}>{favorite.name}: {favorite.location}
+                                <li key={favorite.id}>
                                     <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Details</Button></li>
                             )
                         })}

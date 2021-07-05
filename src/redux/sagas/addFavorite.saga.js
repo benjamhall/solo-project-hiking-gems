@@ -4,7 +4,7 @@ import axios from 'axios';
 function* addFavorite() {
     try {
         // Axios request to add hike to the user's favorites
-        yield axios.put(`/api/ratings/favorite`, {hikeId: action.payload});
+        yield axios.put(`/api/favorite`, {hikeId: action.payload});
         
         // Fetch all of the existing favorites to update DOM
         yield put({ type: 'FETCH_FAVORITES', payload: action.payload });

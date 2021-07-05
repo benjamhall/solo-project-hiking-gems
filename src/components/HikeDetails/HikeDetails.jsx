@@ -16,6 +16,8 @@ function HikeDetails(hikeId) {
 
         // Send a dispatch to add hike to the user's favorites
         dispatch({type: 'ADD_FAVORITE', payload: hikeId})
+        // Sends the user to the Favorites page
+        history.push('/favorite');
     }
     
     // This function handles the edit button and sends the user to the edit page to edit the existing information of that particular hike
