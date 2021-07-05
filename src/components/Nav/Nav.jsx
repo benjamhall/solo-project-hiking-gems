@@ -1,12 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import './Nav.css';
+// import './Nav.css';
 import {useSelector} from 'react-redux';
 
 function Nav() {
+  // Material UI
+  const useStyles = makeStyles({
+    list: {
+      width: "13em",
+      backgroundColor: '#3fc2c9',
+    },
+    text: {
+      color: '#000'
+    }
+  });
 
-  
+  const classes = useStyles();
+  const [drawer, setDrawer] = useState(false);
+
   const user = useSelector((store) => store.user);
 
   let loginLinkData = {
