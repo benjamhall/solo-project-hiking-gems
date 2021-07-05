@@ -1,4 +1,4 @@
-
+// Trails Reducer holds the trails information
 const trailsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_TRAILS':

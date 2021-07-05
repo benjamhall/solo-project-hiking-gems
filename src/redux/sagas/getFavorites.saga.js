@@ -17,7 +17,7 @@ function* fetchFavorites() {
 }
 
 function* getFavoritesSaga() {
-    yield takeLatest('GET_FAVORITES', fetchFavorites);
+    yield takeLatest('FETCH_FAVORITES', fetchFavorites);
 }
 
 export default getFavoritesSaga;
