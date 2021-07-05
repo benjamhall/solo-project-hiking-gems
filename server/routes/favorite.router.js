@@ -9,16 +9,14 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 });
 
 
-// Sends a Post request to the database and adds the new data
+// Sends a Post request to the database and adds the new data to the user's list of favorites
 router.post('/', rejectUnauthenticated, (req, res) => {
-    console.log(req.body);
 
-    // Returning "id" will give us back the id of the created hike
-    const query = `
-    INSERT INTO "hike" ("name", "location", "description")
-    VALUES ($1, $2, $3)
-    RETURNING "id";`
-    
+    // Insert into the rating table 
+    const query =  `INSERT INTO "rating" ("user_id", "hike_id", "favorite")
+                    VALUES ($1, $2, TRUE)
+                    ON CONFLICT ("user_id", "hike_id")
+                    DO UPDATE SET "favorite" = TRUE;`;
     // Save values to add
     const values = [req.user.id, req.body.hikeId];
     // This query makes the new hike entry
@@ -28,7 +26,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
         // Catch for the query
         }).catch(err => {
-            console.log('Error in Post Favorite', err);
+            console.log('Error in Posting Favorite to the database', err);
             res.sendStatus(500)
         })
 }); // End of Post Route
