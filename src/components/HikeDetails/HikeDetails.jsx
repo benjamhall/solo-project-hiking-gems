@@ -1,14 +1,22 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// Material-UI components
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-function HikeDetails() {
+function HikeDetails(hikeId) {
     const dispatch = useDispatch();
     const history = useHistory();
 
     const trail = useSelector((store) => store.trails);
     const details = useSelector((store) => store.details);
+
+    const addFavorite = () => {
+        console.log('Favorite button clicked')
+
+        // Send a dispatch to add hike to the user's favorites
+        dispatch({type: 'ADD_FAVORITE', payload: hikeId})
+    }
     
     // This function handles the edit button and sends the user to the edit page to edit the existing information of that particular hike
     const handleEdit = (event, trail) => {
@@ -35,7 +43,7 @@ function HikeDetails() {
                 <p>{details.location}</p>
                 <p>{details.description}</p>
             </div>
-        <Button>Favorite</Button>
+        <Button onClick={addFavorite}>Favorite</Button>
         <Button>Rate</Button>
         <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
         <Button onClick={handleBack}>Back</Button>

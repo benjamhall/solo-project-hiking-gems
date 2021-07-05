@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   trails,
   edit,
   details,
+
 });
 
 //.this.props.store.errors.loginMessage
