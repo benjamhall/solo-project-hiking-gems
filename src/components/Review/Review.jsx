@@ -38,9 +38,11 @@ function Review() {
         })
     }
 
+    // This function handles the edit button
     const handleEdit = (event, trail) => {
-    
         console.log('trail', trail)
+        
+        // Dispatches the 
         dispatch({type: 'EDIT_HIKE', payload: trail})
         history.push('/edit');
     }
