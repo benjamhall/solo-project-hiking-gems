@@ -2,9 +2,10 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* addFavorite(action) {
+    console.log('made it to addFavorite saga', action.payload)
     try {
         // Axios request to add hike to the user's favorites
-        yield axios.put(`/api/favorite`, {hikeId: action.payload});
+        yield axios.post(`/api/favorite`, {trailId: action.payload});
         console.log('Favorite', action.payload)
         
         // Fetch all of the existing favorites to update DOM

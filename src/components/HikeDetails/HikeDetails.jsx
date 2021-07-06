@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 // Material-UI components
 import Button from '@material-ui/core/Button';
 
-function HikeDetails(hikeId) {
+function HikeDetails(trailId) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -15,7 +15,7 @@ function HikeDetails(hikeId) {
         console.log('Favorite button clicked')
 
         // Send a dispatch to add hike to the user's favorites
-        dispatch({type: 'ADD_FAVORITE', payload: hikeId})
+        dispatch({type: 'ADD_FAVORITE', payload: trailId})
         // Sends the user to the Favorites page
         history.push('/favorite');
     }

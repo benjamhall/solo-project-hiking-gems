@@ -11,6 +11,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 // Sends a Post request to the database and adds the new data to the user's list of favorites
 router.post('/', rejectUnauthenticated, (req, res) => {
+    console.log('got to post request', req.body)
 
     // Insert into the rating table 
     const query =  `INSERT INTO "rating" ("user_id", "hike_id", "favorite")
