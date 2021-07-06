@@ -101,6 +101,7 @@ function Nav() {
         <ListItem>
           Welcome {user.username}
         </ListItem>
+
         <ListItem>
           <HomeIcon />
             <Link
@@ -112,6 +113,7 @@ function Nav() {
               Home
             </Link>
         </ListItem>
+
         <ListItem>
             <Link
               className={classes.text}
@@ -122,16 +124,7 @@ function Nav() {
               Best Hiking Trails
             </Link>
         </ListItem>
-          <ListItem>
-            <Link
-              className={classes.text}
-              component="button"
-              variant="body1"
-              onClick={() => { history.push('/add') }}
-            >
-              Add Hike
-            </Link>
-          </ListItem>
+
           <ListItem>
             <Link
               className={classes.text}
@@ -142,6 +135,18 @@ function Nav() {
               Favorites
             </Link>
           </ListItem>
+
+          <ListItem>
+            <Link
+              className={classes.text}
+              component="button"
+              variant="body1"
+              onClick={() => { history.push('/add') }}
+            >
+              Add Hike
+            </Link>
+          </ListItem>
+
           <ListItem>
             <InfoIcon />
             <Link
@@ -153,6 +158,7 @@ function Nav() {
               About
             </Link>
           </ListItem>
+          
           <ListItem>
             <LogOutButton className="navLink" />
           </ListItem>
