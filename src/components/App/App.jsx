@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 // Material UI imports
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 import { useDispatch } from 'react-redux';
 
@@ -33,7 +33,7 @@ import Review from '../Review/Review';
 import './App.css';
 
 // create custom material UI theme
-const customTheme = createMuiTheme({
+const customTheme = createTheme({
   // theme settings
   palette: {
     primary: {
