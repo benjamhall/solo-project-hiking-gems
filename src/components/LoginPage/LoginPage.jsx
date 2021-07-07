@@ -2,7 +2,28 @@ import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 
+// Material UI imports
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
+
+// This function handles the Login Page which is the first place a user would arrive
 function LoginPage() {
+
+  // Material UI
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    control: {
+      padding: theme.spacing(2),
+      margin: 'auto',
+    },
+  }));
+
+  const classes = useStyles();
+  // End Material UI
+
   const history = useHistory();
 
   return (
@@ -10,7 +31,7 @@ function LoginPage() {
       <LoginForm />
 
       <center>
-        <button
+        <Button
           type="button"
           className="btn btn_asLink"
           onClick={() => {
@@ -18,7 +39,7 @@ function LoginPage() {
           }}
         >
           Register
-        </button>
+        </Button>
       </center>
     </div>
   );
