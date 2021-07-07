@@ -28,7 +28,7 @@ function EditHike() {
         axios.put(`/api/trail/${trail.id}`, trail)
             .then(response => {
                 dispatch({ type: 'CLEAR_EDIT' });
-                history.push('/list')
+                history.push('/review')
             }).catch(error => {
                 console.log(error)
             })
