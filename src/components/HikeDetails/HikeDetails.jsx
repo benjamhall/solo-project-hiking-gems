@@ -48,17 +48,12 @@ console.log('details', details)
                 <p>{details.location}</p>
                 <p>{details.description}</p>
             </div>
-<<<<<<< HEAD
-        <Button onClick={addFavorite}>Favorite</Button>
-        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
-=======
         <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
         <Button>Rate</Button>
         <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
->>>>>>> master
         <Button onClick={handleBack}>Back</Button>
             <div>
-                <p>Please Rate this Hike</p>
+                <p>Rate this Hike:</p>
                 <StarRating />
             </div>
         </div>
