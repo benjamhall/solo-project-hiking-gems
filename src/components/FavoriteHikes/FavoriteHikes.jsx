@@ -15,7 +15,6 @@ function FavoriteHikes() {
     useEffect(() => {
         dispatch({ type: 'FETCH_FAVORITES' })
     }, []);
-   
 
 
     // This function handles the back button and upon click sends the user back to the previous page they were at
@@ -36,8 +35,7 @@ function FavoriteHikes() {
                                 <li key={favorite.id}>
                                     <p>{favorite.name}</p>
                                     <p>{favorite.location}</p>
-                                    <p>{favorite.description}</p>
-                                    </li>
+                                    <p>{favorite.description}</p></li>
                             )
                         })}
                     </ol>
