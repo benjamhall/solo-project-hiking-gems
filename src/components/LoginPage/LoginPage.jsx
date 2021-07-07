@@ -27,7 +27,13 @@ function LoginPage() {
   const history = useHistory();
 
   return (
-    <div>
+    <Grid
+      container
+      className={classes.root}
+      spacing={2}
+      alignItems="center"
+      direction="column"
+    >
       <LoginForm />
 
       <center>
@@ -41,7 +47,7 @@ function LoginPage() {
           Register
         </Button>
       </center>
-    </div>
+    </Grid>
   );
 }
 
