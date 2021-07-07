@@ -11,11 +11,11 @@ function HikeDetails(trailId) {
     const trail = useSelector((store) => store.trails);
     const details = useSelector((store) => store.details);
 
-    const addFavorite = () => {
-        console.log('Favorite button clicked')
+    const addFavorite = (details) => {
+        console.log('Favorite button clicked', details)
 
         // Send a dispatch to add hike to the user's favorites
-        dispatch({type: 'ADD_FAVORITE', payload: trailId})
+        dispatch({type: 'ADD_FAVORITE', payload: details})
         // Sends the user to the Favorites page
         history.push('/favorite');
     }
@@ -36,16 +36,16 @@ function HikeDetails(trailId) {
         history.goBack()
     }
 
-
+console.log('details', details)
     return (
         <div>
-            <div key={trail?.id}>
+            <div key={details?.id}>
                 <h2>Hike Details:</h2>
                 <p>{details.name}</p>
                 <p>{details.location}</p>
                 <p>{details.description}</p>
             </div>
-        <Button onClick={addFavorite}>Favorite</Button>
+        <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
         <Button>Rate</Button>
         <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
         <Button onClick={handleBack}>Back</Button>

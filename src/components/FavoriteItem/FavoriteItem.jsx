@@ -11,4 +11,4 @@ function FavoriteItem({hike}) {
     );
 }
 
-export default TemplateFunction;
+export default FavoriteItem;
