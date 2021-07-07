@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-// Components
-import FavoriteItem from '../FavoriteItem/FavoriteItem';
+
 // Material UI imports
 import Button from '@material-ui/core/Button';
 
@@ -38,9 +37,6 @@ function FavoriteHikes() {
                                     <p>{favorite.name}</p>
                                     <p>{favorite.location}</p>
                                     <p>{favorite.description}</p>
-
-                                    {/* <FavoriteItem hike={hike} /> */}
-                                    {/* <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Details</Button> */}
                                     </li>
                             )
                         })}
