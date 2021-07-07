@@ -6,8 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
-// Material UI imports
-import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+// // Material UI imports
+// import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 import { useDispatch } from 'react-redux';
 
@@ -32,8 +32,12 @@ import Review from '../Review/Review';
 
 import './App.css';
 
-// create custom material UI theme
-const customTheme = createTheme({
+// Material-UI components
+import '@fontsource/roboto';
+import { createTheme, MuiThemeProvider } from '@material-ui/core/styles'
+
+// create custom Material UI theme
+const theme = createTheme({
   // theme settings
   palette: {
     primary: {
@@ -59,7 +63,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <ThemeProvider>
+    <MuiThemeProvider theme={theme}>
       <Router>
         <div>
           <Nav />
@@ -196,7 +200,7 @@ function App() {
           <Footer />
         </div>
       </Router>
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

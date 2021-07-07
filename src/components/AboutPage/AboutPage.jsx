@@ -39,7 +39,8 @@ function AboutPage() {
         <Typography
           variant="body1"
         >
-          Have you ever wanted to know what are the best hidden Hiking Trails in Minnesota? 
+          Have you ever wanted to know the best hidden Hiking Trails in Minnesota? 
+
           If so, come join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.
         </Typography>
       </Grid>
