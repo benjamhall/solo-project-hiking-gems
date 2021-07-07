@@ -35,7 +35,11 @@ function FavoriteHikes() {
                         {favorites?.map(favorite => {
                             return (
                                 <li key={favorite.id}>
-                                    <FavoriteItem hike={hike} />
+                                    <p>{favorite.name}</p>
+                                    <p>{favorite.location}</p>
+                                    <p>{favorite.description}</p>
+
+                                    {/* <FavoriteItem hike={hike} /> */}
                                     {/* <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Details</Button> */}
                                     </li>
                             )
