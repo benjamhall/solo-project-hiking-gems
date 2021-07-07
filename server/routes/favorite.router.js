@@ -8,7 +8,8 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 router.get('/', rejectUnauthenticated, (req, res) => {
     
     // Select from the database all of the favorite hikes in the database
-    const query = `SELECT * FROM "rating" ORDER BY "id" ASC`;
+    const query = `SELECT "hike".name, "hike".location, "hike".description FROM "hike"
+                    JOIN "rating" ON "hike".id = "rating".hike_id;`;
 
     // This query gets the favorite hikes for that user
     pool.query(query)
