@@ -8,6 +8,21 @@ import Grid from '@material-ui/core/Grid';
 import { Button } from '@material-ui/core';
 
 function RegisterPage() {
+
+   // Material UI
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    control: {
+      padding: theme.spacing(2),
+      margin: 'auto',
+    },
+  }));
+
+  const classes = useStyles();
+  // End Material UI
+
   const history = useHistory();
 
   return (
