@@ -60,7 +60,7 @@ function Review() {
                     <div key={trail?.id}>
                         <p>{trail?.name}</p>
                         <p>{trail?.location}</p>
-                        <p>{ trail?.description}</p>
+                        <p>{trail?.description}</p>
                         <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
                         <Button onClick={() => handleDelete(trail)}>Delete</Button>
                     </div>
