@@ -15,6 +15,14 @@ const labels = {
     5: 'Excellent',
 };
 
+const useStyles = makeStyles({
+    root: {
+        width: 200,
+        display: 'flex',
+        alignItems: 'center',
+    },
+});
+
 function HikeDetails(trailId) {
     const dispatch = useDispatch();
     const history = useHistory();
