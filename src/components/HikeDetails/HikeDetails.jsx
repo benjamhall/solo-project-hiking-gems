@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+// Components
+import StarRating from '../StarRating/StarRating';
 // Material-UI components
 import Button from '@material-ui/core/Button';
 
@@ -47,9 +49,12 @@ function HikeDetails(trailId) {
                 <p>{details.description}</p>
             </div>
         <Button onClick={addFavorite}>Favorite</Button>
-        <Button>Rate</Button>
         <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
         <Button onClick={handleBack}>Back</Button>
+            <div>
+                <p>Please Rate this Hike</p>
+                <StarRating />
+            </div>
         </div>
         
     );
