@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+// Material UI imports
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import axios from 'axios';
+
 
 // This function handles Editing and updating the information for a hike
 function EditHike() {
@@ -14,7 +16,9 @@ function EditHike() {
 
     console.log('trail', trail)
 
+    // This function handles the Edit function 
     const handleEdit = (event, newTrailInfo) => {
+        // Dispatches the Edit with the new information to the 
         dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: newTrailInfo, value: event.target.value } })
     }
 
@@ -24,7 +28,7 @@ function EditHike() {
         axios.put(`/api/trail/${trail.id}`, trail)
             .then(response => {
                 dispatch({ type: 'CLEAR_EDIT' });
-                history.push('/list')
+                history.push('/review')
             }).catch(error => {
                 console.log(error)
             })

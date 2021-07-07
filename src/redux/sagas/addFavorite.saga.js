@@ -5,14 +5,14 @@ function* addFavorite(action) {
     console.log('made it to addFavorite saga', action.payload)
     try {
         // Axios request to add hike to the user's favorites
-        yield axios.post(`/api/favorite`, {trailId: action.payload});
+        yield axios.post(`/api/favorite`, {details: action.payload});
         console.log('Favorite', action.payload)
         
         // Fetch all of the existing favorites to update DOM
-        yield put({ type: 'FETCH_FAVORITES', payload: action.payload });
+        yield put({ type: 'FETCH_FAVORITES'});
 
-    } catch {
-        console.log('Error in addFavoriteSaga');
+    } catch(error) {
+        console.log('Error in addFavoriteSaga', error);
     }
 }
 

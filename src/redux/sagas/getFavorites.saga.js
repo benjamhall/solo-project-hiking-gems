@@ -2,10 +2,11 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* fetchFavorites() {
+function* fetchFavorites(action) {
+    console.log('in fetch favorite saga', action)
     try {
         // Axios request to get favorites
-        const favorites = yield axios.get('/api/favorite');
+        const favorites = yield axios.get(`/api/favorite/${action.payload}`);
         console.log('get all:', favorites.data);
 
         // Sends Set favorites to the favorite reducer

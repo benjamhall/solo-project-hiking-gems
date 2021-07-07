@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Components
 import StarRating from '../StarRating/StarRating';
-// Material-UI components
+// Material-UI imports
 import Button from '@material-ui/core/Button';
 
 
@@ -14,20 +14,20 @@ function HikeDetails(trailId) {
     const trail = useSelector((store) => store.trails);
     const details = useSelector((store) => store.details);
 
-    const addFavorite = () => {
-        console.log('Favorite button clicked')
+    const addFavorite = (details) => {
+        console.log('Favorite button clicked', details)
 
         // Send a dispatch to add hike to the user's favorites
-        dispatch({type: 'ADD_FAVORITE', payload: trailId})
+        dispatch({type: 'ADD_FAVORITE', payload: details})
         // Sends the user to the Favorites page
         history.push('/favorite');
     }
     
     // This function handles the edit button and sends the user to the edit page to edit the existing information of that particular hike
-    const handleEdit = (event, trail) => {
-        console.log('trail', trail)
+    const handleEdit = (event, details) => {
+        console.log('trail', details)
         // Dispatches to the reducer 
-        dispatch({ type: 'EDIT_HIKE', payload: trail })
+        dispatch({ type: 'EDIT_HIKE', payload: details })
         // Sends the user to the edit page
         history.push('/edit');
     }
@@ -39,17 +39,23 @@ function HikeDetails(trailId) {
         history.goBack()
     }
 
-
+console.log('details', details)
     return (
         <div>
-            <div key={trail?.id}>
+            <div key={details?.id}>
                 <h2>Hike Details:</h2>
                 <p>{details.name}</p>
                 <p>{details.location}</p>
                 <p>{details.description}</p>
             </div>
+<<<<<<< HEAD
         <Button onClick={addFavorite}>Favorite</Button>
         <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
+=======
+        <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
+        <Button>Rate</Button>
+        <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
+>>>>>>> master
         <Button onClick={handleBack}>Back</Button>
             <div>
                 <p>Please Rate this Hike</p>
