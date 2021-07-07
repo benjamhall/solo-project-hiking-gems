@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-// Material UI components
+
+// Material UI imports
 import Button from '@material-ui/core/Button';
 
 function FavoriteHikes() {
@@ -14,7 +15,6 @@ function FavoriteHikes() {
     useEffect(() => {
         dispatch({ type: 'FETCH_FAVORITES' })
     }, []);
-   
 
 
     // This function handles the back button and upon click sends the user back to the previous page they were at
@@ -33,7 +33,9 @@ function FavoriteHikes() {
                         {favorites?.map(favorite => {
                             return (
                                 <li key={favorite.id}>
-                                    <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Details</Button></li>
+                                    <p>{favorite.name}</p>
+                                    <p>{favorite.location}</p>
+                                    <p>{favorite.description}</p></li>
                             )
                         })}
                     </ol>

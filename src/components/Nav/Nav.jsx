@@ -20,8 +20,8 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
-import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
-import EditIcon from '@material-ui/icons/Edit';
+// import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
+// import EditIcon from '@material-ui/icons/Edit';
 
 function Nav() {
   // Material UI
