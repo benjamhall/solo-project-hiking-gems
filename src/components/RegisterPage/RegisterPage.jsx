@@ -9,7 +9,7 @@ import { Button } from '@material-ui/core';
 
 function RegisterPage() {
 
-   // Material UI
+  // Material UI
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -26,11 +26,17 @@ function RegisterPage() {
   const history = useHistory();
 
   return (
-    <div>
+    <Grid
+      container
+      className={classes.root}
+      spacing={2}
+      alignItems="center"
+      direction="column"
+    >
       <RegisterForm />
 
       <center>
-        <button
+        <Button
           type="button"
           className="btn btn_asLink"
           onClick={() => {
@@ -38,9 +44,9 @@ function RegisterPage() {
           }}
         >
           Login
-        </button>
+        </Button>
       </center>
-    </div>
+    </Grid>
   );
 }
 
