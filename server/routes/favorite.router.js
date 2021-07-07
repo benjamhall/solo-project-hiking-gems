@@ -6,8 +6,8 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 
 // Sends a Get request to the database for all of the favorites
 router.get('/:id', rejectUnauthenticated, (req, res) => {
-    console.log('req.body in favorite router', req.params.id)
-    
+    console.log('in favorite router get', req.params.id)
+
     // Select from the database all of the favorite hikes in the database
     const query = `SELECT "hike".name, "hike".location, "hike".description FROM "hike"
                     JOIN "rating" ON "hike".id = "rating".hike_id
@@ -15,7 +15,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                     WHERE "user".id = $1`;
 
     // This query gets the favorite hikes for that user
-    pool.query(query, req.params.id)
+    pool.query(query, [req.params.id])
         .then(result => {
             res.send(result.rows);
         })

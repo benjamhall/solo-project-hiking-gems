@@ -15,7 +15,7 @@ function FavoriteHikes() {
 
     // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
-        dispatch({ type: 'FETCH_FAVORITES', id: id })
+        dispatch({ type: 'FETCH_FAVORITES', payload: id })
     }, []);
 
 
