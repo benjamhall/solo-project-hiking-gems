@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-// Material-UI components
+// Material-UI imports
 import Button from '@material-ui/core/Button';
 
 function HikeDetails(trailId) {
