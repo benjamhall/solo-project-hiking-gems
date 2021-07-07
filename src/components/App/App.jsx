@@ -109,7 +109,7 @@ function App() {
             </ProtectedRoute>
 
             <ProtectedRoute
-              // logged in shows Add Hike else shows LoginPage
+              // logged in shows Favorite Hikes else shows LoginPage
               exact
               path="/favorite"
             >
@@ -133,7 +133,7 @@ function App() {
             </ProtectedRoute>
 
             <ProtectedRoute
-              // logged in shows Edit Hike else shows LoginPage
+              // logged in shows Details Hike else shows LoginPage
               exact
               path="/details"
             >

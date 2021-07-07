@@ -8,11 +8,14 @@ function FavoriteHikes() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    const id = useSelector((store) => store.user.id);
+    console.log('user id', id)
+
     const favorites = useSelector((store) => store.favorites);
 
     // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
-        dispatch({ type: 'FETCH_FAVORITES' })
+        dispatch({ type: 'FETCH_FAVORITES', id: id })
     }, []);
 
 
