@@ -16,7 +16,9 @@ function EditHike() {
 
     console.log('trail', trail)
 
+    // This function handles the Edit function 
     const handleEdit = (event, newTrailInfo) => {
+        // Dispatches the Edit with the new information to the 
         dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: newTrailInfo, value: event.target.value } })
     }
 

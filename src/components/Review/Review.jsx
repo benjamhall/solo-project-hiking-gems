@@ -52,7 +52,7 @@ function Review() {
     return (
         
         <div>
-            <h2>Review</h2>
+            <h2>Review and Edit Page:</h2>
             <form>
             <div>
                 {trail?.map(trail => {

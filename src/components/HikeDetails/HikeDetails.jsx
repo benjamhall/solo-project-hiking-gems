@@ -21,10 +21,10 @@ function HikeDetails(trailId) {
     }
     
     // This function handles the edit button and sends the user to the edit page to edit the existing information of that particular hike
-    const handleEdit = (event, trail) => {
-        console.log('trail', trail)
+    const handleEdit = (event, details) => {
+        console.log('trail', details)
         // Dispatches to the reducer 
-        dispatch({ type: 'EDIT_HIKE', payload: trail })
+        dispatch({ type: 'EDIT_HIKE', payload: details })
         // Sends the user to the edit page
         history.push('/edit');
     }
@@ -47,7 +47,7 @@ console.log('details', details)
             </div>
         <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
         <Button>Rate</Button>
-        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
+        <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
         <Button onClick={handleBack}>Back</Button>
         </div>
         
