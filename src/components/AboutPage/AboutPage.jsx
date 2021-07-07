@@ -39,11 +39,8 @@ function AboutPage() {
         <Typography
           variant="body1"
         >
-          Have you ever wanted to know what are the top rated Hiking Spots in Minnesota?
-
-          If so, you have come to the right place!
-          
-          We are so glad to have you join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.
+          Have you ever wanted to know what are the best hidden Hiking Trails in Minnesota? 
+          If so, come join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.
         </Typography>
       </Grid>
     </Grid>
