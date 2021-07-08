@@ -23,10 +23,7 @@ function MyRatings ({detailsId, value}) {
                 newRating: Number(event.target.value),
                 detailsId: detailsId,
             }
-        
         })
-        // location.reload();
-        // return false;
 
         // After dispatching the rating then send the user to the hiking list
         history.push('/list')
