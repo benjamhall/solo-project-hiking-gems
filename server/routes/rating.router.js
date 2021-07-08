@@ -35,7 +35,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     const query = `INSERT INTO "rating" ("user_id", "hike_id", "ratings")
                     VALUES ($1, $2, $3)`;
     // Save values to add
-    const values = [req.user.id, req.body.details];
+    const values = [req.user.id, req.body.payload];
     // This query makes the new hike entry
     pool.query(query, values)
         .then(result => {
