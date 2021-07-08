@@ -5,7 +5,7 @@ function* addFavorite(action) {
     console.log('made it to addFavorite saga', action.payload)
     try {
         // Axios request to add favorite to the user's favorites
-        yield axios.post(`/api/favorite`, {details: action.payload});
+        yield axios.post(`/api/favorite`, {payload: action.payload});
         console.log('Favorite', action.payload)
         
         // Fetch all of the existing favorites to update DOM

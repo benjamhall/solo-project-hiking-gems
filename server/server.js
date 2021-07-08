@@ -26,9 +26,9 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/api/trail', trailRouter)
-app.use('/api/favorite', favoriteRouter)
-app.use('/api/rating', ratingRouter)
+app.use('/api/trail', trailRouter);
+app.use('/api/favorite', favoriteRouter);
+app.use('/api/rating', ratingRouter);
 
 // Serve static files
 app.use(express.static('build'));

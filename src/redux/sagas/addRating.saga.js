@@ -5,7 +5,7 @@ function* addRating(action) {
     console.log('in add Rating saga', action.payload)
     try {
         // Axios request to add rating to the user's ratings
-        yield axios.post(`/api/rating`, { details: action.payload });
+        yield axios.post(`/api/rating`, { rating: action.payload });
         console.log('Rating', action.payload)
 
         // Fetch all of the existing favorites to update DOM
