@@ -57,8 +57,8 @@ console.log('details', details)
                 {/* Ratings */}
                 <p>Rate this Hike:</p>
                 {/* <MyRatings hikeId={id} origin={'hikeDetails'} rating={ratingsData.userRatingsData.rating} /> */}
-                <StarRating />
-                <MyRatings detailsId={details.id} value={details.ratings}/>
+                {/* <StarRating /> */}
+                <MyRatings detailsId={details.id} value={details.ratings} />
             </div>
         </div>
         

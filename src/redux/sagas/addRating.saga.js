@@ -9,7 +9,7 @@ function* addRating(action) {
         console.log('Rating', action.payload)
 
         // Fetch all of the existing favorites to update DOM
-        yield put({ type: 'FETCH_FAVORITES' });
+        yield put({ type: 'FETCH_RATINGS' });
 
     } catch (error) {
         console.log('Error in add Rating Saga', error);
