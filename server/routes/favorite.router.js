@@ -20,7 +20,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
             res.send(result.rows);
         })
         .catch(err => {
-            console.log('ERROR: Get all trails', err);
+            console.log('ERROR: Get all favorites', err);
             res.sendStatus(500)
         })
 }); // End of the Get route

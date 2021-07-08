@@ -6,8 +6,8 @@ function* fetchRatings() {
     
     try {
         // Axios request to get ratings
-        const favorites = yield axios.get(`/api/rating/`);
-        console.log('get all:', fetchRatings.data);
+        const ratings = yield axios.get(`/api/rating`);
+        console.log('get all ratings:', fetchRatings.data);
 
         // Sends Set ratings to the ratings reducer
         yield put({ type: 'SET_RATINGS', payload: ratings.data });
