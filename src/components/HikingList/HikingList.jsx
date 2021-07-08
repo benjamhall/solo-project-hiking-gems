@@ -12,7 +12,7 @@ function HikingList() {
     const dispatch = useDispatch();
     const history = useHistory();
     const trails = useSelector(store => store.trails);
-    const ratings = useSelector(store => store.ratings);
+    // const ratings = useSelector(store => store.ratings);
 
     // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
