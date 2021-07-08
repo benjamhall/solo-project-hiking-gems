@@ -50,7 +50,6 @@ console.log('details', details)
                 <p>{details.description}</p>
             </div>
         <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
-        <Button>Rate</Button>
         <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
         <Button onClick={handleBack}>Back</Button>
             <div>

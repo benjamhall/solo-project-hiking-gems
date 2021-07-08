@@ -17,7 +17,7 @@ function HikingList() {
     // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
         dispatch({ type: 'FETCH_TRAILS' })
-        dispatch({ type: 'FETCH_RATINGS' })
+        // dispatch({ type: 'FETCH_RATINGS' })
 
     }, []);
 
@@ -43,7 +43,7 @@ function HikingList() {
                         return (
                             <li key={hike.id}>{hike.name}: {hike.location} 
                                 {/* <MyRatings /> */}
-                                <TrailRating />
+                                <TrailRating value={hike.ratings}/>
                                 <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button></li>
                         )
                     })}
