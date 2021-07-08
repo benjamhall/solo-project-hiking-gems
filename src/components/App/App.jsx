@@ -20,6 +20,7 @@ import AddHike from '../AddHike/AddHike';
 import AboutPage from '../AboutPage/AboutPage'
 import EditHike from '../EditHike/EditHike';
 import FavoriteHikes from '../FavoriteHikes/FavoriteHikes';
+import Header from '../Header/Header';
 import HikeDetails from '../HikeDetails/HikeDetails';
 import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
@@ -67,6 +68,7 @@ function App() {
       <Router>
         <div>
           <Nav />
+          <Header />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
