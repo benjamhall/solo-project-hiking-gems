@@ -25,6 +25,9 @@ function MyRatings ({detailsId, value}) {
             }
         
         })
+        // location.reload();
+        // return false;
+
         // After dispatching the rating then send the user to the hiking list
         history.push('/list')
     }
