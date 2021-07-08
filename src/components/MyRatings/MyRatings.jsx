@@ -1,6 +1,7 @@
 // hooks
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 // Material-UI components
 import { withStyles } from '@material-ui/core/styles';
@@ -12,6 +13,8 @@ import Box from '@material-ui/core/Box';
 
 function MyRatings ({detailsId, value}) {
     const dispatch = useDispatch();
+    const history = useHistory();
+    
 
     const handleChange = (event) => {
         console.log('star clicked')
@@ -20,7 +23,10 @@ function MyRatings ({detailsId, value}) {
                 newRating: Number(event.target.value),
                 detailsId: detailsId,
             }
+        
         })
+        // After dispatching the rating then send the user to the hiking list
+        history.push('/list')
     }
 
     return (

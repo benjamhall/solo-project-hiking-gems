@@ -4,26 +4,27 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 
-// // Sends a Get request to the database for all of the favorites
-// router.get('/:id', rejectUnauthenticated, (req, res) => {
-//     console.log('in favorite router get', req.params.id)
+// Sends a Get request to the database for ratings
+router.get('/', rejectUnauthenticated, (req, res) => {
+    console.log('in rating router get', req.body)
+    console.log('req.user.id', req.user.id)
 
-//     // Select from the database all of the favorite hikes in the database
-//     const query = `SELECT "hike".name, "hike".location, "hike".description FROM "hike"
-//                     JOIN "rating" ON "hike".id = "rating".hike_id
-//                     JOIN "user" ON "user".id = "rating".user_id
-//                     WHERE "user".id = $1`;
+    // Select from the database all of the ratings in the database
+    const query = `SELECT "hike".name, "hike".location, "hike".description FROM "hike"
+                    JOIN "rating" ON "hike".id = "rating".hike_id
+                    JOIN "user" ON "user".id = "rating".user_id
+                    WHERE "user".id = $1`;
 
-//     // This query gets the favorite hikes for that user
-//     pool.query(query, [req.params.id])
-//         .then(result => {
-//             res.send(result.rows);
-//         })
-//         .catch(err => {
-//             console.log('ERROR: Get all trails', err);
-//             res.sendStatus(500)
-//         })
-// }); // End of the Get route
+    // This query gets the ratings for hikes 
+    pool.query(query, [req.params.id])
+        .then(result => {
+            res.send(result.rows);
+        })
+        .catch(err => {
+            console.log('ERROR: Get all trails', err);
+            res.sendStatus(500)
+        })
+}); // End of the Get route
 
 
 // Sends a Post request to the database and adds the new rating 
