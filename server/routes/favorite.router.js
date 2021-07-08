@@ -33,7 +33,10 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
     // Insert into the rating table 
     const query =  `INSERT INTO "rating" ("user_id", "hike_id", "favorite")
-                    VALUES ($1, $2, TRUE)`;
+                    VALUES ($1, $2, TRUE)
+                    ON CONFLICT ("user_id", "hike_id")
+                    DO UPDATE "rating" SET "favorite" = TRUE 
+                    WHERE "user_id" = $1, "hike_id" = $2;`;
     // Save values to add
     const values = [req.user.id, req.body.details];
     // This query makes the new favorite entry

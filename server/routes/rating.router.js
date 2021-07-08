@@ -33,9 +33,12 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
     // Insert into the rating table 
     const query = `INSERT INTO "rating" ("user_id", "hike_id", "ratings")
-                    VALUES ($1, $2, $3)`;
+                    VALUES ($1, $2, $3)
+                    ON CONFLICT ("user_id", "hike_id")
+                    DO UPDATE "rating" SET "ratings" = $3
+                    WHERE "user_id" = $1, "hike_id" = $2;`;
     // Save values to add
-    const values = [req.user.id, req.body.payload];
+    const values = [req.user.id, req.body.detailsId, req.body.newRating];
 
     // This query makes the new rating entry
     pool.query(query, values)
