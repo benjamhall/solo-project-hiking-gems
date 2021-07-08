@@ -5,8 +5,8 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 
 
 // Sends a Get request to the database for all of the favorites
-router.get('/:id', rejectUnauthenticated, (req, res) => {
-    console.log('in favorite router get', req.params.id)
+router.get('/', rejectUnauthenticated, (req, res) => {
+    // console.log('in favorite router get', req.params.id)
 
     // Select from the database all of the favorite hikes in the database
     const query = `SELECT "hike".name, "hike".location, "hike".description FROM "hike"
@@ -15,7 +15,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                     WHERE "user".id = $1`;
 
     // This query gets the favorite hikes for that user
-    pool.query(query, [req.params.id])
+    pool.query(query, [req.user.id])
         .then(result => {
             res.send(result.rows);
         })
@@ -35,8 +35,8 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     const query =  `INSERT INTO "rating" ("user_id", "hike_id", "favorite")
                     VALUES ($1, $2, TRUE)
                     ON CONFLICT ("user_id", "hike_id")
-                    DO UPDATE "rating" SET "favorite" = TRUE 
-                    WHERE "user_id" = $1, "hike_id" = $2;`;
+                    DO UPDATE SET "favorite" = TRUE 
+                    WHERE "rating".user_id = $1 AND "rating".hike_id = $2;`;
     // Save values to add
     const values = [req.user.id, req.body.details];
     // This query makes the new favorite entry

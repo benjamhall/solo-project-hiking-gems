@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 
-function MyRatings ({detailsId, rating}) {
+function MyRatings ({detailsId, value}) {
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
@@ -30,7 +30,7 @@ function MyRatings ({detailsId, rating}) {
                 <Rating
                     name="simple-controlled"
                     size="large"
-                    // value={rating}
+                    value={value}
                     onChange={() => handleChange(event)}
                 />
             </Box>
