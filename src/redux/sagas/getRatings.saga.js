@@ -9,7 +9,7 @@ function* fetchRatings() {
         const favorites = yield axios.get(`/api/rating/`);
         console.log('get all:', fetchRatings.data);
 
-        // Sends Set favorites to the favorite reducer
+        // Sends Set ratings to the ratings reducer
         yield put({ type: 'SET_RATINGS', payload: ratings.data });
 
     } catch(error) {
