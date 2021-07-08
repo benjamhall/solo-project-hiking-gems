@@ -36,14 +36,15 @@ router.post('/', rejectUnauthenticated, (req, res) => {
                     VALUES ($1, $2, $3)`;
     // Save values to add
     const values = [req.user.id, req.body.payload];
-    // This query makes the new hike entry
+
+    // This query makes the new rating entry
     pool.query(query, values)
         .then(result => {
             res.sendStatus(201);
 
             // Catch for the query
         }).catch(err => {
-            console.log('ERROR: in Posting Favorite to the database', err);
+            console.log('ERROR: in Posting Rating to the database', err);
             res.sendStatus(500)
         })
 }); // End of Post Route

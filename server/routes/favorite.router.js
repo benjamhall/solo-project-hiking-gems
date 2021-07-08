@@ -36,7 +36,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
                     VALUES ($1, $2, TRUE)`;
     // Save values to add
     const values = [req.user.id, req.body.details];
-    // This query makes the new hike entry
+    // This query makes the new favorite entry
     pool.query(query, values)
         .then(result => {
             res.sendStatus(201);
