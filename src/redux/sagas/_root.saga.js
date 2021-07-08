@@ -8,6 +8,7 @@ import deleteHikeSaga from './deleteHike.saga';
 import addFavoriteSaga from './addFavorite.saga';
 import getFavoritesSaga from './getFavorites.saga';
 import addRatingSaga from './addRating.saga';
+import getRatingsSaga from './getRatings.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -27,5 +28,6 @@ export default function* rootSaga() {
     addFavoriteSaga(),
     getFavoritesSaga(),
     addRatingSaga(),
+    getRatingsSaga(),
   ]);
 }
