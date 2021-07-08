@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+// Components
+import StarRating from '../StarRating/StarRating';
+import MyRatings from '../MyRatings/MyRatings';
 // Material-UI imports
 import Button from '@material-ui/core/Button';
+
 
 function HikeDetails(trailId) {
     const dispatch = useDispatch();
@@ -35,7 +39,7 @@ function HikeDetails(trailId) {
         //Routes the user back to the details list or the list page they were at
         history.goBack()
     }
-
+// console.log('details id', details.id)
 console.log('details', details)
     return (
         <div>
@@ -46,9 +50,15 @@ console.log('details', details)
                 <p>{details.description}</p>
             </div>
         <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
-        <Button>Rate</Button>
         <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
         <Button onClick={handleBack}>Back</Button>
+            <div>
+                {/* Ratings */}
+                <p>Rate this Hike:</p>
+                {/* <MyRatings hikeId={id} origin={'hikeDetails'} rating={ratingsData.userRatingsData.rating} /> */}
+                {/* <StarRating /> */}
+                <MyRatings detailsId={details.id} value={details.ratings} />
+            </div>
         </div>
         
     );

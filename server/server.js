@@ -10,7 +10,8 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const trailRouter = require('./routes/trail.router');
-const favoriteRouter = require(`./routes/favorite.router`);
+const favoriteRouter = require('./routes/favorite.router');
+const ratingRouter = require('./routes/rating.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -25,8 +26,9 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/api/trail', trailRouter)
-app.use('/api/favorite', favoriteRouter)
+app.use('/api/trail', trailRouter);
+app.use('/api/favorite', favoriteRouter);
+app.use('/api/rating', ratingRouter);
 
 // Serve static files
 app.use(express.static('build'));

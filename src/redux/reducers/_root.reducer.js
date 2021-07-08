@@ -5,6 +5,7 @@ import trails from './trails.reducer';
 import edit from './edit.reducer';
 import details from './details.reducer';
 import favorites from './favorites.reducer';
+import ratings from './ratings.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   edit,
   details,
   favorites,
+  ratings,
 
 });
 
