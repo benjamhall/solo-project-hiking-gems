@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+// Material UI imports
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 
 function AddHike() {
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& .MuiTextField-root': {
+                margin: theme.spacing(1),
+                width: '25ch',
+            },
+        },
+    }));
+    //End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -71,7 +85,10 @@ function AddHike() {
 
                 <TextField value={description}
                 onChange={handleDescriptionChange}
-                id="outlined-basic" label="Description of Trail" variant="outlined" />
+                id="outlined-basic" label="Description of Trail" multiline rows={4} variant="outlined" />
+                {/* <TextareaAutosize value={description}
+                onChange={handleDescriptionChange}
+                aria-label="minimum height" minRows={3} placeholder="Description of Trail" /> */}
 
             </form>
             <Button onClick={handleCancel} type="submit" variant="contained" color="secondary">Cancel</Button>

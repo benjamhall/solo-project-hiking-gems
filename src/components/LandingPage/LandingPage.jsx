@@ -6,7 +6,6 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
-  
   const [heading, setHeading] = useState('Welcome Adventurer!');
   const history = useHistory();
 
@@ -17,15 +16,10 @@ function LandingPage() {
   return (
     <div className="container">
       <h2>{heading}</h2>
-
+      <p>
+        Register Here to Find the Best Hidden Hiking Gems in Minnesota!
+      </p>
       <div className="grid">
-        <div className="grid-col grid-col_8">
-
-          <p>
-            Register Here to Find the Best Hidden Hiking Gems in Minnesota!
-          </p>
-
-        </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />
 

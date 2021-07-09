@@ -33,6 +33,9 @@ function RegisterPage() {
       alignItems="center"
       direction="column"
     >
+      <Grid item xs={12}>
+        <h3>Welcome Adventurer! </h3>
+      </Grid>
       <RegisterForm />
 
       <center>
