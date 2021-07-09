@@ -62,23 +62,39 @@ function HikingList() {
     }
 
     return (
-        <main>
-            <div>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+            <Grid item xs={12}>
                 <h2>Hiking List:</h2>
-            </div>
-            <section>
+            </Grid>
+            <Grid item xs={12}>
                 <ol>
                     {trails.map(hike => {
                         return (
-                            <li key={hike.id}>{hike.name}: {hike.location} 
-                                {/* <MyRatings /> */}
-                                <TrailRating value={hike.ratings}/>
-                                <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button></li>
+                            <li key={hike.id}>
+                                <Grid item xs={12}>
+                                    {hike.name}: {hike.location}
+                                </Grid>
+                                
+                                <Grid item xs={12}>
+                                    <TrailRating value={hike.ratings} />
+                                </Grid>
+
+                                <Grid item xs={12}>
+                                    <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button>
+                                </Grid>
+                            </li>
+
                         )
                     })}
                 </ol>
-            </section>
-        </main>
+            </Grid>
+        </Grid>
     );
 }
 
