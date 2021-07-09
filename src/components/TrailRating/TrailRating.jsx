@@ -9,7 +9,7 @@ function TrailRating({value}) {
     return (
         <div>
             <Box component="fieldset" mb={3} borderColor="transparent">
-                <Typography component="legend">Rating:</Typography>
+                <Typography component="legend"> My Rating:</Typography>
                 <Rating 
                 name="read-only" 
                 value={value} readOnly />

@@ -67,23 +67,44 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 
 
 // Delete a hike in the database
-router.delete('/:id', rejectUnauthenticated, (req, res) => {
+router.delete('/:id', async (req, res) => {
     let hikeId = req.params.id;
     console.log('Received Request to delete ', hikeId);
     console.log('req.params', req.params)
 
+    const connection = await pool.connect();
+    try {
+        await connection.query("BEGIN");
 
-    const query = `DELETE FROM "hike" WHERE "id" = $1;`;
+        const sqlDeleteRating = `DELETE FROM "rating" WHERE "hike_id" = $1;`;
+        await connection.query(sqlDeleteRating, [hikeId]);
+        
+        const sqlDeleteHike = 'DELETE FROM "hike" WHERE "id" = $1;';
+        await connection.query(sqlDeleteHike, [hikeId]);
 
-    pool.query(query, [hikeId])
-        .then((result) => {
-            console.log('Hike deleted', result);
-            res.sendStatus(200);
-        }).catch((error) => {
-            console.log('error in deleting hike', error);
-            res.sendStatus(500);
-        })
-}) //End of Delete Route
+        await connection.query("COMMIT");
+        res.sendStatus(200);
+        
+    } catch (error) {
+        await connection.query("ROLLBACK");
+        console.log('Delete error in router', error);
+        res.sendStatus(500);
+    } finally {
+        connection.release();
+    }
+})
+
+//     const query = `DELETE FROM "hike" WHERE "id" = $1;`;
+
+//     pool.query(query, [hikeId])
+//         .then((result) => {
+//             console.log('Hike deleted', result);
+//             res.sendStatus(200);
+//         }).catch((error) => {
+//             console.log('error in deleting hike', error);
+//             res.sendStatus(500);
+//         })
+// }) //End of Delete Route
 
 
 module.exports = router;
