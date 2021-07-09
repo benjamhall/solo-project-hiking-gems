@@ -5,9 +5,11 @@ import { useHistory } from 'react-router-dom';
 import StarRating from '../StarRating/StarRating';
 import MyRatings from '../MyRatings/MyRatings';
 // Material-UI imports
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-
+// This function displays the specific hike that was selected
 function HikeDetails(trailId) {
     const dispatch = useDispatch();
     const history = useHistory();
