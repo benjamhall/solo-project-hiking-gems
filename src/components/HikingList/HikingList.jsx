@@ -5,14 +5,43 @@ import { useHistory } from 'react-router-dom';
 import MyRatings from '../MyRatings/MyRatings';
 import TrailRating from '../TrailRating/TrailRating';
 // Material UI imports
-import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import { Button, TextField } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
 
 // This function lists all of the hiking trails 
 function HikingList() {
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            flexGrow: 1,
+        },
+        control: {
+            padding: theme.spacing(0),
+            margin: 'auto',
+        },
+        absolute: {
+            position: 'absolute',
+            bottom: theme.spacing(2),
+            right: theme.spacing(3),
+        },
+    }));
+
+    const classes = useStyles();
+    // End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
+
+    // Get the Trails information from the reducer so we can render it
     const trails = useSelector(store => store.trails);
-    // const ratings = useSelector(store => store.ratings);
 
     // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
