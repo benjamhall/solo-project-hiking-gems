@@ -82,7 +82,7 @@ function RegisterForm() {
           margin="dense"
         />
       </div>
-      <Box m={3} />
+      <Box m={1} />
       <div>
         <Button
           className="btn"

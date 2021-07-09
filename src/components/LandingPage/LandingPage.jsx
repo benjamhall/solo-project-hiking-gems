@@ -6,6 +6,7 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
+  
   const [heading, setHeading] = useState('Welcome Adventurer!');
   const history = useHistory();
 

@@ -18,6 +18,7 @@ import Box from '@material-ui/core/Box';
 
 // This function lists all of the hiking trails 
 function HikingList() {
+    
     // Material UI
     const useStyles = makeStyles((theme) => ({
         root: {
