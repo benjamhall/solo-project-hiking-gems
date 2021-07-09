@@ -69,7 +69,7 @@ function Nav() {
           className={classes.text}
           component="button"
           variant="body1"
-          onCLick={() => {history.push('/homePage')}}
+          onClick={() => {history.push('/homePage')}}
           >
             Home
           </Link>
@@ -108,7 +108,7 @@ function Nav() {
               className={classes.text}
               component="button"
               variant="body1"
-              onClick={() => { history.push('/') }}
+              onClick={() => { history.push('/homePage') }}
             >
               Home
             </Link>
