@@ -99,7 +99,7 @@ function Nav() {
       
       <List>
         <ListItem>
-          Welcome {user.username}
+          Welcome, {user.username}!
         </ListItem>
 
         <ListItem>
