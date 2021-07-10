@@ -14,6 +14,15 @@ function EditHike() {
 
     // Material UI
     const useStyles = makeStyles((theme) => ({
+        root: {
+            '& .MuiTextField-root': {
+                margin: theme.spacing(1),
+                width: '25ch',
+            },
+        },
+        textField: {
+            width: 300,
+        },
         button: {
             margin: theme.spacing(1),
         },
@@ -62,17 +71,17 @@ function EditHike() {
             <form>
                 <TextField onChange={(event) => handleEdit(event, 'name')} 
                     value={trail.name} 
-                    type="text" placeholder="Edit Trail Name" variant="outlined" />
+                    type="text" placeholder="Edit Trail Name" variant="outlined" className={classes.textField} />
                 <br />
 
                 <TextField onChange={(event) => handleEdit(event, 'location')} 
                     value={trail.location} 
-                    type="text" placeholder="Edit Trail Location" variant="outlined" />
+                    type="text" placeholder="Edit Trail Location" variant="outlined" className={classes.textField} />
                 <br />
 
                 <TextField onChange={(event) => handleEdit(event, 'description')} 
                     value={trail.description} 
-                    type="text" multiline rows={4} placeholder="Edit Trail Description" variant="outlined" />
+                    type="text" multiline rows={8} placeholder="Edit Trail Description" variant="outlined" className={classes.textField} />
                 <br />
             </form>
 

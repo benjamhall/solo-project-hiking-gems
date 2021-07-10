@@ -85,7 +85,7 @@ function AddHike() {
                 <br />
                     <TextField value={description}
                         onChange={handleDescriptionChange}
-                        id="outlined-basic" label="Description of Trail" multiline rows={4} variant="outlined" />
+                        id="outlined-basic" label="Description of Trail" multiline rows={8} variant="outlined" />
                 <br />
             </form>
 
