@@ -31,7 +31,15 @@ Container
   margin-bottom: 25px;
   border: solid black 2px;
   border-radius: 10px;
+  margin-top: 10px;
 }
+
+.rating-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  
+}
+
 /* --------------------------------------------------------------------------------
 Button
 -------------------------------------------------------------------------------- */

@@ -75,7 +75,7 @@ function HikingList() {
                 <h2>Hiking List:</h2>
             </Grid>
             <Grid item xs={12}>
-                <ol>
+                <ul>
                     {trails.map(hike => {
                         return (
                             <li key={hike.id} className={"hike-container"}>
@@ -94,7 +94,7 @@ function HikingList() {
 
                         )
                     })}
-                </ol>
+                </ul>
             </Grid>
         </Grid>
         </div>

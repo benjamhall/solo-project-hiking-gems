@@ -7,7 +7,7 @@ function TrailRating({value}) {
 
 
     return (
-        <div>
+        <div className={"rating-container"}>
             <Box component="fieldset" mb={3} borderColor="transparent">
                 <Typography component="legend"> My Rating:</Typography>
                 <Rating 
