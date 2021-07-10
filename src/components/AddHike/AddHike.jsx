@@ -2,22 +2,30 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Material UI imports
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import { spacing } from '@material-ui/system';
 
 
 function AddHike() {
     // Material UI
     const useStyles = makeStyles((theme) => ({
-        root: {
-            '& .MuiTextField-root': {
-                margin: theme.spacing(1),
-                width: '25ch',
-            },
+        box: {
+            height: 40,
+            display: "flex",
+            paddingRight: 75,
+            paddingLeft: 75
+
         },
+        spreadBox: {
+            justifyContent: "space-around",
+            alignItems: "center"
+        }
     }));
+
+    const classes = useStyles();
     //End Material UI
 
     const dispatch = useDispatch();
@@ -64,7 +72,7 @@ function AddHike() {
         console.log('save button clicked')
 
         // Dispatches the information from the inputs to the reducer
-        dispatch({type: 'POST_HIKE', payload: {name: name, location: location, description: description}})
+        dispatch({ type: 'POST_HIKE', payload: { name: name, location: location, description: description } })
 
         // Sends the user to the Review Page
         history.push('/review')
@@ -73,30 +81,27 @@ function AddHike() {
     return (
         <div className={"list-container"}>
             <h2>Add a Hike</h2>
-            <p>Please Fill Out This Form to Submit a New Hiking Trail:</p>
+            <p>Fill Out This Form to Submit a New Hiking Trail:</p>
             <form>
-                <section>
-                <TextField value={name}
-                onChange ={handleNameChange}
-                id="outlined-name" label="Hiking Trail Name" variant="outlined" />
-                </section>
-            <br />
-                <TextField value={location}
-                onChange={handleLocationChange}
-                id="outlined-location" label="Location" variant="outlined" />
-            <br />
-                <TextField value={description}
-                onChange={handleDescriptionChange}
-                id="outlined-basic" label="Description of Trail" multiline rows={4} variant="outlined" />
-                {/* <TextareaAutosize value={description}
-                onChange={handleDescriptionChange}
-                aria-label="minimum height" minRows={3} placeholder="Description of Trail" /> */}
-
+                    <TextField value={name}
+                        onChange={handleNameChange}
+                        id="outlined-name" label="Hiking Trail Name" variant="outlined" />
+                <br />
+                    <TextField value={location}
+                        onChange={handleLocationChange}
+                        id="outlined-location" label="Location" variant="outlined" />
+                <br />
+                    <TextField value={description}
+                        onChange={handleDescriptionChange}
+                        id="outlined-basic" label="Description of Trail" multiline rows={4} variant="outlined" />
+                <br />
             </form>
 
-            <div className={"add-hike-button-container"}>
-                <Button onClick={handleCancel} type="submit" variant="contained" color="secondary">Cancel</Button>
-                <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
+            <div>
+                <Box className={`${classes.spreadBox} ${classes.box}`}>
+                    <Button onClick={handleCancel} type="submit" variant="contained" color="secondary" >Cancel</Button>
+                    <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
+                </Box>
             </div>
         </div>
     );
