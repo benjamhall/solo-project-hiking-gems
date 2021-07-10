@@ -16,17 +16,8 @@ function HikeDetails() {
 
     // Material UI
     const useStyles = makeStyles((theme) => ({
-        root: {
-            flexGrow: 1,
-        },
-        control: {
-            padding: theme.spacing(0),
-            margin: 'auto',
-        },
-        absolute: {
-            position: 'absolute',
-            bottom: theme.spacing(2),
-            right: theme.spacing(3),
+        button: {
+            margin: theme.spacing(1),
         },
     }));
 
@@ -76,16 +67,16 @@ console.log('details', details)
             <Grid item xs={12} key={details?.id}>
                 <h2>Hike Details:</h2>
                 <div className={"hike-container"}>
-                    <p>{details.name}</p>
-                    <p>{details.location}</p>
+                    <h3>{details.name}</h3>
+                    <h4>{details.location}</h4>
                     <p>{details.description}</p>
                 </div>
             </Grid>
-            <Grid item xs={12}>
-                <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
-                <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
-                <Button onClick={handleBack}>Back</Button>
-            </Grid>
+            <Box className={`${classes.spreadBox} ${classes.box}`}>
+                <Button onClick={(event) => addFavorite(details.id)} variant="contained" color="primary" className={classes.button}>Favorite</Button>
+                <Button onClick={(event) => handleEdit(event, details)} variant="contained" color="primary" className={classes.button}>Edit</Button>
+                <Button onClick={handleBack} variant="contained" color="primary" className={classes.button}>Back</Button>
+            </Box>
             <Grid item xs={12}>
                 {/* Ratings */}
                 <MyRatings detailsId={details.id} value={details.ratings} />
