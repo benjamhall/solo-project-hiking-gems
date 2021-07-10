@@ -43,7 +43,7 @@ function FavoriteHikes() {
                     </ol>
                 </section>
             </div>
-            <Button onClick={handleBack}>Back</Button>
+            <Button onClick={handleBack} variant="outlined">Back</Button>
         </div>
 
     );

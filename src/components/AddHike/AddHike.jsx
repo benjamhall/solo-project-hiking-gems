@@ -71,18 +71,20 @@ function AddHike() {
     }
 
     return (
-        <div>
+        <div className={"list-container"}>
             <h2>Add a Hike</h2>
             <p>Please Fill Out This Form to Submit a New Hiking Trail:</p>
             <form>
+                <section>
                 <TextField value={name}
                 onChange ={handleNameChange}
                 id="outlined-name" label="Hiking Trail Name" variant="outlined" />
-
+                </section>
+            <br />
                 <TextField value={location}
                 onChange={handleLocationChange}
                 id="outlined-location" label="Location" variant="outlined" />
-
+            <br />
                 <TextField value={description}
                 onChange={handleDescriptionChange}
                 id="outlined-basic" label="Description of Trail" multiline rows={4} variant="outlined" />
@@ -91,8 +93,11 @@ function AddHike() {
                 aria-label="minimum height" minRows={3} placeholder="Description of Trail" /> */}
 
             </form>
-            <Button onClick={handleCancel} type="submit" variant="contained" color="secondary">Cancel</Button>
-            <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
+
+            <div className={"add-hike-button-container"}>
+                <Button onClick={handleCancel} type="submit" variant="contained" color="secondary">Cancel</Button>
+                <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
+            </div>
         </div>
     );
 }

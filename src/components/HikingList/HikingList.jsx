@@ -63,6 +63,7 @@ function HikingList() {
     }
 
     return (
+        <div className={"list-container"}>
         <Grid
             container
             className={classes.root}
@@ -77,18 +78,18 @@ function HikingList() {
                 <ol>
                     {trails.map(hike => {
                         return (
-                            <li key={hike.id}>
-                                <Grid item xs={12}>
+                            <li key={hike.id} className={"hike-container"}>
+                                {/* <Grid item xs={12}> */}
                                     {hike.name}: {hike.location}
-                                </Grid>
+                                {/* </Grid> */}
                                 
-                                <Grid item xs={12}>
+                                {/* <Grid item xs={12}> */}
                                     <TrailRating value={hike.ratings} />
-                                </Grid>
+                                {/* </Grid> */}
 
-                                <Grid item xs={12}>
+                                {/* <Grid item xs={12}> */}
                                     <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button>
-                                </Grid>
+                                {/* </Grid> */}
                             </li>
 
                         )
@@ -96,6 +97,7 @@ function HikingList() {
                 </ol>
             </Grid>
         </Grid>
+        </div>
     );
 }
 
