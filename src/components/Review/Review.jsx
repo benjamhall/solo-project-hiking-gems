@@ -19,6 +19,10 @@ function Review() {
             padding: theme.spacing(2),
             margin: 'auto',
         },
+        button: {
+            margin: theme.spacing(1),
+        },
+
     }));
 
     const classes = useStyles();
@@ -26,7 +30,7 @@ function Review() {
 
     const dispatch = useDispatch();
     const history = useHistory();
- 
+
     const trail = useSelector((store) => store.trails);
 
     useEffect(() => {
@@ -42,8 +46,8 @@ function Review() {
             confirmButtonText: 'Yes!',
             showCancelButton: true,
         }).then((result) => {
-            
-            if(result.value) {
+
+            if (result.value) {
                 Swal.fire({
                     title: "hike deleted",
                     icon: "success",
@@ -58,31 +62,31 @@ function Review() {
     // This function handles the edit button
     const handleEdit = (event, trail) => {
         console.log('trail', trail)
-        
+
         // Dispatches the Edit Hike type to the edit reducer sending the information of trail in the payload
-        dispatch({type: 'EDIT_HIKE', payload: trail})
+        dispatch({ type: 'EDIT_HIKE', payload: trail })
         // Sends the user to the edit page
         history.push('/edit');
     }
 
- 
+
     return (
-        
         <div>
             <h2>Review and Edit Page:</h2>
             <form>
-            <div>
-                {trail?.map(trail => {
-                    return(
-                    <div key={trail?.id}>
-                        <p>{trail?.name}</p>
-                        <p>{trail?.location}</p>
-                        <p>{trail?.description}</p>
-                        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
-                        <Button onClick={() => handleDelete(trail)}>Delete</Button>
-                    </div>
-                )})}
-            </div>
+                <div>
+                    {trail?.map(trail => {
+                        return (
+                            <div key={trail?.id} className={"hike-container"}>
+                                <h3>{trail?.name}</h3>
+                                <h4>{trail?.location}</h4>
+                                <p>{trail?.description}</p>
+                                <Button onClick={(event) => handleEdit(event, trail)} type="submit" variant="contained" color="primary" className={classes.button} >Edit</Button>
+                                <Button onClick={() => handleDelete(trail)} type="submit" variant="contained" color="primary" className={classes.button} >Delete</Button>
+                            </div>
+                        )
+                    })}
+                </div>
             </form>
         </div>
     );

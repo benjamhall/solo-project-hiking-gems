@@ -80,17 +80,11 @@ function HikingList() {
                     {trails.map(hike => {
                         return (
                             <li key={hike.id} className={"hike-container"}>
-                                {/* <Grid item xs={12}> */}
                                     {hike.name}: {hike.location}
-                                {/* </Grid> */}
-                                
-                                {/* <Grid item xs={12}> */}
-                                    <TrailRating value={hike.ratings} />
-                                {/* </Grid> */}
 
-                                {/* <Grid item xs={12}> */}
+                                    <TrailRating value={hike.ratings} />
+                                    
                                     <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button>
-                                {/* </Grid> */}
                             </li>
 
                         )

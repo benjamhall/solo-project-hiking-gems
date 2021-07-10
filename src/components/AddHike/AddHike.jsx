@@ -12,17 +12,21 @@ import { spacing } from '@material-ui/system';
 function AddHike() {
     // Material UI
     const useStyles = makeStyles((theme) => ({
-        box: {
-            height: 40,
-            display: "flex",
-            paddingRight: 75,
-            paddingLeft: 75
-
+        button: {
+            margin: theme.spacing(1),
         },
-        spreadBox: {
-            justifyContent: "space-around",
-            alignItems: "center"
-        }
+        // box: {
+        //     height: 40,
+        //     display: "flex",
+        //     paddingRight: 75,
+        //     paddingLeft: 75
+
+        // },
+        // spreadBox: {
+        //     justifyContent: "space-around",
+        //     alignItems: "center"
+        // }
+
     }));
 
     const classes = useStyles();
@@ -98,9 +102,9 @@ function AddHike() {
             </form>
 
             <div>
-                <Box className={`${classes.spreadBox} ${classes.box}`}>
-                    <Button onClick={handleCancel} type="submit" variant="contained" color="secondary" >Cancel</Button>
-                    <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
+                <Box>
+                    <Button onClick={handleCancel} type="submit" variant="contained" color="primary" className={classes.button} >Cancel</Button>
+                    <Button onClick={postHike} type="submit" variant="contained" color="primary" className={classes.button} >Save</Button>
                 </Box>
             </div>
         </div>

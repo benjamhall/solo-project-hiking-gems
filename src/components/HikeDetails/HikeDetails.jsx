@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 // Components
 import StarRating from '../StarRating/StarRating';
 import MyRatings from '../MyRatings/MyRatings';
-import './HikeDetails.css';
 // Material-UI imports
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -72,7 +71,7 @@ console.log('details', details)
                     <p>{details.description}</p>
                 </div>
             </Grid>
-            <Box className={`${classes.spreadBox} ${classes.box}`}>
+            <Box>
                 <Button onClick={(event) => addFavorite(details.id)} variant="contained" color="primary" className={classes.button}>Favorite</Button>
                 <Button onClick={(event) => handleEdit(event, details)} variant="contained" color="primary" className={classes.button}>Edit</Button>
                 <Button onClick={handleBack} variant="contained" color="primary" className={classes.button}>Back</Button>
