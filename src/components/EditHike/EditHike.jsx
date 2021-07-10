@@ -3,12 +3,25 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 // Material UI imports
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 
 // This function handles Editing and updating the information for a hike
 function EditHike() {
+
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        button: {
+            margin: theme.spacing(1),
+        },
+    }));
+
+    const classes = useStyles();
+    //End Material UI
+    
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -54,7 +67,7 @@ function EditHike() {
                     type="text" multiline rows={4} placeholder="Edit Trail Description" />
                 <br />
             </form>
-            
+
               <div>
                 <Button onClick={handleSubmit}>Submit</Button>
               </div>
