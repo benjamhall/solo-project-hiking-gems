@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // Material UI imports
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { Card } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
@@ -13,10 +14,11 @@ function FavoriteHikes() {
     const useStyles = makeStyles({
         root: {
             minWidth: 275,
+            border: 2,
+            paddingRight: 8,
+            marginBottom: 10,
         },
-        title: {
-            fontSize: 12,
-        },
+
         pos: {
             marginBottom: 12,
         },
@@ -55,17 +57,21 @@ function FavoriteHikes() {
                     <ol>
                         {favorites?.map(favorite => {
                             return (
+                                <Card variant="outlined"  marginBottom={10}>
                                 <li key={favorite.id}>
-                                    <Typography>{favorite.name}</Typography>
-                                    <p>{favorite.location}</p>
+                                    <h3>{favorite.name}</h3>
+                                    <h4>{favorite.location}</h4>
                                     <p>{favorite.description}</p></li>
+                                </Card>
                             )
                         })}
                     </ol>
                 </Card>
                 </section>
             </div>
-            <Button onClick={handleBack} variant="outlined">Back</Button>
+            <Box textAlign="center">
+                <Button onClick={handleBack} variant="contained" color="secondary" >Back</Button>
+            </Box>
         </div>
 
     );

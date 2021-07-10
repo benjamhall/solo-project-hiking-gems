@@ -8,6 +8,7 @@ import TrailRating from '../TrailRating/TrailRating';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { Button } from '@material-ui/core';
+import { Card } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
@@ -75,7 +76,8 @@ function HikingList() {
                 <h2>Hiking List:</h2>
             </Grid>
             <Grid item xs={12}>
-                <ul>
+            <Card>
+                <ol>
                     {trails.map(hike => {
                         return (
                             <li key={hike.id} className={"hike-container"}>
@@ -94,7 +96,8 @@ function HikingList() {
 
                         )
                     })}
-                </ul>
+                </ol>
+            </Card>
             </Grid>
         </Grid>
         </div>
