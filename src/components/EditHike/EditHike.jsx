@@ -36,14 +36,28 @@ function EditHike() {
     }
 
     return (
-        <div>
+        <div className={"list-container"}>
             <h2>Edit</h2>
             <form>
-                <TextField onChange={(event) => handleEdit(event, 'name')} value={trail.name} type="text" placeholder="Edit Trail Name" />
-                <TextField onChange={(event) => handleEdit(event, 'location')} value={trail.location} type="text" placeholder="Edit Trail Location" />
-                <TextField onChange={(event) => handleEdit(event, 'description')} value={trail.description} type="text" multiline rows={4} placeholder="Edit Trail Description" />
-                <Button onClick={handleSubmit}>Submit</Button>
+                <TextField onChange={(event) => handleEdit(event, 'name')} 
+                    value={trail.name} 
+                    type="text" placeholder="Edit Trail Name" />
+                <br />
+
+                <TextField onChange={(event) => handleEdit(event, 'location')} 
+                    value={trail.location} 
+                    type="text" placeholder="Edit Trail Location" />
+                <br />
+
+                <TextField onChange={(event) => handleEdit(event, 'description')} 
+                    value={trail.description} 
+                    type="text" multiline rows={4} placeholder="Edit Trail Description" />
+                <br />
             </form>
+            
+              <div>
+                <Button onClick={handleSubmit}>Submit</Button>
+              </div>
         </div>
     );
 }

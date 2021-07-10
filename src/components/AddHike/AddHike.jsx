@@ -15,18 +15,6 @@ function AddHike() {
         button: {
             margin: theme.spacing(1),
         },
-        // box: {
-        //     height: 40,
-        //     display: "flex",
-        //     paddingRight: 75,
-        //     paddingLeft: 75
-
-        // },
-        // spreadBox: {
-        //     justifyContent: "space-around",
-        //     alignItems: "center"
-        // }
-
     }));
 
     const classes = useStyles();
