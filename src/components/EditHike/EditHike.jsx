@@ -21,7 +21,7 @@ function EditHike() {
 
     const classes = useStyles();
     //End Material UI
-    
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -33,6 +33,14 @@ function EditHike() {
     const handleEdit = (event, newTrailInfo) => {
         // Dispatches the Edit with the new information to the 
         dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: newTrailInfo, value: event.target.value } })
+    }
+
+    // This function handles the cancel button which upon click will bring the user back to the home page
+    const handleCancel = () => {
+        console.log('cancel button clicked')
+
+        //Routes the user back to the home page
+        history.goBack()
     }
 
     // This function handles the Submit button 
@@ -54,22 +62,25 @@ function EditHike() {
             <form>
                 <TextField onChange={(event) => handleEdit(event, 'name')} 
                     value={trail.name} 
-                    type="text" placeholder="Edit Trail Name" />
+                    type="text" placeholder="Edit Trail Name" variant="outlined" />
                 <br />
 
                 <TextField onChange={(event) => handleEdit(event, 'location')} 
                     value={trail.location} 
-                    type="text" placeholder="Edit Trail Location" />
+                    type="text" placeholder="Edit Trail Location" variant="outlined" />
                 <br />
 
                 <TextField onChange={(event) => handleEdit(event, 'description')} 
                     value={trail.description} 
-                    type="text" multiline rows={4} placeholder="Edit Trail Description" />
+                    type="text" multiline rows={4} placeholder="Edit Trail Description" variant="outlined" />
                 <br />
             </form>
 
               <div>
-                <Button onClick={handleSubmit}>Submit</Button>
+                <Box>
+                    <Button onClick={handleCancel} type="submit" variant="contained" color="primary" className={classes.button} >Cancel</Button>
+                    <Button onClick={handleSubmit} type="submit" variant="contained" color="primary" className={classes.button}>Submit</Button>
+                </Box>
               </div>
         </div>
     );
