@@ -71,7 +71,13 @@ function Review() {
 
 
     return (
-        <div>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
             <h2>Review and Edit Page:</h2>
             <form>
                 <div>
@@ -88,7 +94,7 @@ function Review() {
                     })}
                 </div>
             </form>
-        </div>
+        </Grid>
     );
 }
 
