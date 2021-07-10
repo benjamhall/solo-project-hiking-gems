@@ -74,14 +74,12 @@ console.log('details', details)
             direction="column"
         >
             <Grid item xs={12} key={details?.id}>
-                <Grid item xs={12}>
                 <h2>Hike Details:</h2>
-                </Grid>
-                <Grid item xs={12}>
-                <p>{details.name}</p>
-                </Grid>
-                <p>{details.location}</p>
-                <p>{details.description}</p>
+                <div className={"hike-container"}>
+                    <p>{details.name}</p>
+                    <p>{details.location}</p>
+                    <p>{details.description}</p>
+                </div>
             </Grid>
             <Grid item xs={12}>
                 <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
