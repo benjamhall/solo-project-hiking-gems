@@ -87,8 +87,10 @@ function Review() {
                                 <h3>{trail?.name}</h3>
                                 <h4>{trail?.location}</h4>
                                 <p>{trail?.description}</p>
-                                <Button onClick={(event) => handleEdit(event, trail)} type="submit" variant="contained" color="primary" className={classes.button} >Edit</Button>
-                                <Button onClick={() => handleDelete(trail)} type="submit" variant="contained" color="primary" className={classes.button} >Delete</Button>
+                                <div className={"center-container"}>
+                                    <Button onClick={(event) => handleEdit(event, trail)} type="submit" variant="contained" color="primary" className={classes.button} >Edit</Button>
+                                    <Button onClick={() => handleDelete(trail)} type="submit" variant="contained" color="primary" className={classes.button} >Delete</Button>
+                                </div>
                             </div>
                         )
                     })}
