@@ -36,13 +36,15 @@ function AboutPage() {
         <Typography variant="h5">Welcome to Hidden Hiking Gems</Typography>
       </Grid>
       <Grid item xs={9}>
-        <Typography
-          variant="body1"
-        >
-          Have you ever wanted to know the best hidden Hiking Trails in Minnesota? 
+        <p>
+          Have you ever wanted to know the best hidden Hiking Trails in Minnesota?</p>
+          
+        <p> If so, come join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.</p>
 
-          If so, come join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.
-        </Typography>
+        <p> Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails</p> 
+
+        <h3>Technology Used:</h3>
+        <p>JavaScript, React, Redux, Redux-Saga, Node, PostgreSQL, Express, Material UI</p>
       </Grid>
     </Grid>
   );
