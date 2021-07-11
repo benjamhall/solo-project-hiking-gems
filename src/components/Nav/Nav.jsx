@@ -28,7 +28,7 @@ function Nav() {
   const useStyles = makeStyles({
     list: {
       width: "13em",
-      backgroundColor: '#3fc2c9',
+      backgroundColor: '#97f3fb',
     },
     text: {
       color: '#000'
