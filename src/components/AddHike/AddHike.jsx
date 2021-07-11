@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 // Material UI imports
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { spacing } from '@material-ui/system';
@@ -17,6 +18,7 @@ function AddHike() {
         },
         textField: {
             width: 300,
+            backgroundColor: 'white',
         },
     }));
 
@@ -74,9 +76,19 @@ function AddHike() {
     }
 
     return (
-        <div className={"list-container"}>
-            <h2>Add a Hike</h2>
-            <p>Fill Out This Form to Submit a New Hiking Trail:</p>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+        
+            <Grid item xs={12}>
+                <h2>Add a Hike:</h2>
+            </Grid>
+                {/* <h4>Fill Out This Form to Submit a New Hiking Trail:</h4> */}
+            
             <form>
                     <TextField value={name}
                         onChange={handleNameChange}
@@ -98,7 +110,8 @@ function AddHike() {
                     <Button onClick={postHike} type="submit" variant="contained" color="primary" className={classes.button} >Save</Button>
                 </Box>
             </div>
-        </div>
+        
+        </Grid>
     );
 }
 
