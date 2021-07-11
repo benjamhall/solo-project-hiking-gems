@@ -14,6 +14,8 @@ import { useDispatch } from 'react-redux';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
+// import Logo from '../../images/lake.png';
+
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AddHike from '../AddHike/AddHike';
@@ -66,7 +68,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
-        <div>
+        <div style={{ backgroundImage: "url(/lake.png)"}}>
           <Nav />
           <Header />
           <Switch>

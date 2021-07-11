@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import { useHistory } from 'react-router-dom';
-// import Logo from '../../images/waterfall.jpeg';
+// import Logo from '../../images/lake.png';
 
 
 function Header() {
