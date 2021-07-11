@@ -25,9 +25,12 @@ h1 {
   font-family: fantasy;
   font-style: bold;
   
+  color: white;
+  background-color: rgb(46, 71, 78, 0.8);
+  /* background-color: rgb(47, 72, 79, 0.8); */
   /* border: solid black 2px;
   border-radius: 10px; */
-  background-color: rgb(204, 204, 204, 0.8);
+  /* background-color: rgb(204, 204, 204, 0.8); */
   
 }
 
@@ -36,15 +39,17 @@ h2 {
   font-family: fantasy;
   /* border: solid black 2px;
   border-radius: 10px; */
-  background-color: rgb(204, 204, 204, 0.8);
+  background-color: rgb(46, 71, 78, 0.8);
 
 }
 
 h3 {
   text-align: center;
+  color: white;
+  background-color: rgb(46, 71, 78, 0.8);
    /* border: solid black 2px;
   border-radius: 10px; */
-  background-color: rgb(204, 204, 204, 0.8);
+  /* background-color: rgb(204, 204, 204, 0.8); */
 }
 
 h4 {
