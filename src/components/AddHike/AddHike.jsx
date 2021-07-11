@@ -15,6 +15,9 @@ function AddHike() {
         button: {
             margin: theme.spacing(1),
         },
+        textField: {
+            width: 300,
+        },
     }));
 
     const classes = useStyles();
@@ -77,15 +80,15 @@ function AddHike() {
             <form>
                     <TextField value={name}
                         onChange={handleNameChange}
-                        id="outlined-name" label="Hiking Trail Name" variant="outlined" />
+                    id="outlined-name" label="Hiking Trail Name" variant="outlined" className={classes.textField} />
                 <br />
                     <TextField value={location}
                         onChange={handleLocationChange}
-                        id="outlined-location" label="Location" variant="outlined" />
+                    id="outlined-location" label="Location" variant="outlined" className={classes.textField} />
                 <br />
                     <TextField value={description}
                         onChange={handleDescriptionChange}
-                        id="outlined-basic" label="Description of Trail" multiline rows={8} variant="outlined" />
+                    id="outlined-basic" label="Description of Trail" multiline rows={8} variant="outlined" className={classes.textField} />
                 <br />
             </form>
 

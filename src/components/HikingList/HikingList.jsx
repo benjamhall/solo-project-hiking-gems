@@ -83,8 +83,8 @@ function HikingList() {
                                     {hike.name}: {hike.location}
 
                                     <TrailRating value={hike.ratings} />
-                                    
-                                    <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button>
+
+                                    <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="primary">Learn More</Button>
                             </li>
 
                         )
