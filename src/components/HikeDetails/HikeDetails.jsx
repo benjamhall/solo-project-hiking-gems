@@ -65,12 +65,12 @@ console.log('details', details)
         >
             <Grid item xs={12} key={details?.id}>
                 <h2>Hike Details:</h2>
+            </Grid>
                 <div className={"hike-container"}>
                     <h3>{details.name}</h3>
                     <h4>{details.location}</h4>
                     <p>{details.description}</p>
                 </div>
-            </Grid>
             <Box>
                 <Button onClick={(event) => addFavorite(details.id)} variant="contained" color="primary" className={classes.button}>Favorite</Button>
                 <Button onClick={(event) => handleEdit(event, details)} variant="contained" color="primary" className={classes.button}>Edit</Button>

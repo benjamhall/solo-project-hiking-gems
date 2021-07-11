@@ -24,11 +24,19 @@ img {
 h1 {
   font-family: fantasy;
   font-style: bold;
+  
+  /* border: solid black 2px;
+  border-radius: 10px; */
+  background-color: rgb(204, 204, 204, 0.8);
+  
 }
 
 h2 {
   text-align: center;
   font-family: fantasy;
+  /* border: solid black 2px;
+  border-radius: 10px; */
+  background-color: rgb(204, 204, 204, 0.8);
 
 }
 
@@ -88,6 +96,13 @@ Container
 
 .center-container {
   text-align: center;
+}
+
+.style-container {
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204, 0.8);
 }
 
 /* --------------------------------------------------------------------------------

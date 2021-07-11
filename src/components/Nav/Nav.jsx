@@ -148,7 +148,6 @@ function Nav() {
           </ListItem>
 
           <ListItem>
-            <InfoIcon />
             <Link
               className={classes.text}
               component="button"
