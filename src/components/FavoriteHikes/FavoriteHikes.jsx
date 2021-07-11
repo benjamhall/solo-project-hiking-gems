@@ -64,24 +64,20 @@ function FavoriteHikes() {
                 </Grid>
             <div>
                 <section>
-                    <Card className={classes.root} variant="outlined">
                     <ol>
                         {favorites?.map(favorite => {
                             return (
-                                <Card variant="outlined"  marginBottom={10}>
-                                <li key={favorite.id}>
+                                    <li key={favorite.id} className={"hike-container"}>
                                     <h3>{favorite.name}</h3>
                                     <h4>{favorite.location}</h4>
                                     <p>{favorite.description}</p></li>
-                                </Card>
                             )
                         })}
                     </ol>
-                </Card>
                 </section>
             </div>
             <Box textAlign="center">
-                <Button onClick={handleBack} variant="contained" color="secondary" >Back</Button>
+                <Button onClick={handleBack} variant="contained" color="primary" >Back</Button>
             </Box>
         </Grid>
 
