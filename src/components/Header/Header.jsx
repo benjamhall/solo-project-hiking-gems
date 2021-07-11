@@ -39,7 +39,10 @@ function Header() {
             spacing={2}
             alignItems="center"
             direction="column"
-        >
+        >   
+            <div style={{
+                backgroundImage: `url("https://pngtree.com/freepng/lake-in-winter_4871467.html")`
+            }}>
             <h1>Hidden Hiking Gems:</h1>
             {/* <img
                 src={Logo}
@@ -47,6 +50,7 @@ function Header() {
                 onClick={() => { history.push('/homePage') }}
 
             /> */}
+            </div>
         </Grid>
     )
 }

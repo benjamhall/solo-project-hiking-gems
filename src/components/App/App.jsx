@@ -68,7 +68,6 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
-        <div style={{ backgroundImage: "url(/lake.png)"}}>
           <Nav />
           <Header />
           <Switch>
@@ -202,7 +201,6 @@ function App() {
             </Route>
           </Switch>
           <Footer />
-        </div>
       </Router>
     </MuiThemeProvider>
   );

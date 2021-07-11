@@ -41,7 +41,7 @@ function HomePage() {
                 <p>We are so glad to have you join our Hiking Community of Adventurers dedicated to sharing Hidden Hiking Gems to help you get out and enjoy spending more time in nature!</p>
             </Grid>
             <Grid item xs={12}>
-                <p>Click here to check out our List of Hidden Hiking Gems</p>
+                <p>Check out our List of Hidden Hiking Gems:</p>
             </Grid>
             <Grid item xs={12}>
                 <Button
