@@ -64,7 +64,7 @@ function HikingList() {
     }
 
     return (
-        <div className={"list-container"}>
+        <div className={"center-container"}>
         <Grid
             container
             className={classes.root}

@@ -72,6 +72,7 @@ Container
 .list-container {
   text-align: center;
   margin-bottom: 10px;
+  background-color: rgb(204, 204, 204, 0.8);
 }
 
 .hike-container {

@@ -5,8 +5,10 @@ import axios from 'axios';
 // Material UI imports
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import { PlayCircleFilledWhite } from '@material-ui/icons';
 
 
 // This function handles Editing and updating the information for a hike
@@ -22,6 +24,7 @@ function EditHike() {
         },
         textField: {
             width: 300,
+            backgroundColor: 'white',
         },
         button: {
             margin: theme.spacing(1),
@@ -66,8 +69,16 @@ function EditHike() {
     }
 
     return (
-        <div className={"list-container"}>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+        <Grid item xs={12}>
             <h2>Edit</h2>
+        </Grid>
             <form>
                 <TextField onChange={(event) => handleEdit(event, 'name')} 
                     value={trail.name} 
@@ -91,7 +102,7 @@ function EditHike() {
                     <Button onClick={handleSubmit} type="submit" variant="contained" color="primary" className={classes.button}>Submit</Button>
                 </Box>
               </div>
-        </div>
+        </Grid>
     );
 }
 
