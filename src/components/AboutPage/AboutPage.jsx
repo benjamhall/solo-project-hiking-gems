@@ -44,7 +44,7 @@ function AboutPage() {
         <p> Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails</p> 
 
         <Grid item xs={12}>
-          <h3>Technology Used:</h3>
+          <h2>Technology Used:</h2>
         </Grid>
         <p>JavaScript, React, Redux, Redux-Saga, Node, PostgreSQL, Express, Material UI</p>
       </Grid>
