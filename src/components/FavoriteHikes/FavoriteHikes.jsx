@@ -47,7 +47,8 @@ function FavoriteHikes() {
     const handleBack = () => {
         console.log('Back button clicked"')
         //Routes the user back to the details list or the list page they were at
-        history.goBack()
+        // history.goBack()
+        history.push('/list')
     }
 
     return (

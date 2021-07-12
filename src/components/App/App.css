@@ -24,7 +24,7 @@ img {
 h1 {
   font-family: fantasy;
   font-style: bold;
-border: solid white 2px;
+  border: solid white 2px;
   border-radius: 10px;
   
   color: white;
@@ -50,6 +50,8 @@ h2 {
 h3 {
   text-align: center;
   color: white;
+  border: solid white 2px;
+  border-radius: 10px;
   background-color: rgb(46, 71, 78, 0.8);
    /* border: solid black 2px;
   border-radius: 10px; */
@@ -59,6 +61,8 @@ h3 {
 h4 {
   text-align: center;
    color: white;
+  border: solid white 2px;
+  border-radius: 10px;
   background-color: rgb(46, 71, 78, 0.8);
   /* background-color: rgb(204, 204, 204, 0.8); */
 }

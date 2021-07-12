@@ -43,7 +43,7 @@ function Header() {
             <div style={{
                 backgroundImage: `url("https://pngtree.com/freepng/lake-in-winter_4871467.html")`
             }}>
-            <h1>Hidden Hiking Gems:</h1>
+            <h1>Hidden Hiking Gems</h1>
             {/* <img
                 src={Logo}
                 alt="Hidden Hiking Gems"

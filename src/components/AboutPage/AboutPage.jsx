@@ -36,17 +36,16 @@ function AboutPage() {
         <h2>Welcome Adventurer!</h2>
       </Grid>
       <Grid item xs={9}>
-        <p>
-          Have you ever wanted to know the best hidden Hiking Trails in Minnesota?</p>
-          
-        <p> If so, come join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.</p>
-
         <p> Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails</p> 
 
         <Grid item xs={12}>
           <h2>Technology Used:</h2>
         </Grid>
         <p>JavaScript, React, Redux, Redux-Saga, Node, PostgreSQL, Express, Material UI</p>
+        <Grid item xs={12}>
+          <h2>Thank You!</h2>
+        </Grid>
+        <p>Prime Digital Academy, Dane our instructor and my fellow Genocchi Cohort. You all are real coders!</p>
       </Grid>
     </Grid>
   );

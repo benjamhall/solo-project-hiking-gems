@@ -32,7 +32,7 @@ function MyRatings ({detailsId, value}) {
     return (
         <div>
             <Box component="fieldset" mb={3} borderColor="transparent">
-                <div className={"style-container"}>
+                <div >
                 <h3>Rate this Hike:</h3>
                 </div>
                 <Rating
