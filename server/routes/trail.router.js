@@ -94,17 +94,6 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-//     const query = `DELETE FROM "hike" WHERE "id" = $1;`;
-
-//     pool.query(query, [hikeId])
-//         .then((result) => {
-//             console.log('Hike deleted', result);
-//             res.sendStatus(200);
-//         }).catch((error) => {
-//             console.log('error in deleting hike', error);
-//             res.sendStatus(500);
-//         })
-// }) //End of Delete Route
 
 
 module.exports = router;

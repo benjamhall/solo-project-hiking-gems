@@ -30,4 +30,12 @@ describe ('EDIT REDUCER TESTS', () => {
         const state = {};
         expect(editReducer(state, action)).toEqual({property: 1, value: 1})
     })
+    test('CLEAR_EDIT', () => {
+        const action = {
+            type: 'CLEAR_EDIT',
+            payload: {}
+        }
+        const state = {}
+        expect(editReducer(state, action)).toEqual({})
+    })
 })
