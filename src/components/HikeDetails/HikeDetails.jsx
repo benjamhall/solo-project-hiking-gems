@@ -5,14 +5,28 @@ import { useHistory } from 'react-router-dom';
 import StarRating from '../StarRating/StarRating';
 import MyRatings from '../MyRatings/MyRatings';
 // Material-UI imports
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
+// This function displays the specific hike that was selected
+function HikeDetails() {
 
-function HikeDetails(trailId) {
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        button: {
+            margin: theme.spacing(1),
+        },
+    }));
+
+    const classes = useStyles();
+    // End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const trail = useSelector((store) => store.trails);
+    // const trail = useSelector((store) => store.trails);
     const details = useSelector((store) => store.details);
 
     const addFavorite = (details) => {
@@ -42,24 +56,31 @@ function HikeDetails(trailId) {
 // console.log('details id', details.id)
 console.log('details', details)
     return (
-        <div>
-            <div key={details?.id}>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+            <Grid item xs={12} key={details?.id}>
                 <h2>Hike Details:</h2>
-                <p>{details.name}</p>
-                <p>{details.location}</p>
-                <p>{details.description}</p>
-            </div>
-        <Button onClick={(event) => addFavorite(details.id)}>Favorite</Button>
-        <Button onClick={(event) => handleEdit(event, details)}>Edit</Button>
-        <Button onClick={handleBack}>Back</Button>
-            <div>
+            </Grid>
+                <div className={"hike-container"}>
+                    <h3>{details.name}</h3>
+                    <h4>{details.location}</h4>
+                    <p>{details.description}</p>
+                </div>
+            <Box>
+                <Button onClick={(event) => addFavorite(details.id)} variant="contained" color="primary" className={classes.button}>Favorite</Button>
+                <Button onClick={(event) => handleEdit(event, details)} variant="contained" color="primary" className={classes.button}>Edit</Button>
+                <Button onClick={handleBack} variant="contained" color="primary" className={classes.button}>Back</Button>
+            </Box>
+            <Grid item xs={12}>
                 {/* Ratings */}
-                <p>Rate this Hike:</p>
-                {/* <MyRatings hikeId={id} origin={'hikeDetails'} rating={ratingsData.userRatingsData.rating} /> */}
-                {/* <StarRating /> */}
                 <MyRatings detailsId={details.id} value={details.ratings} />
-            </div>
-        </div>
+            </Grid>
+        </Grid>
         
     );
 }

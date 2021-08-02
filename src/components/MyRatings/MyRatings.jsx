@@ -32,14 +32,18 @@ function MyRatings ({detailsId, value}) {
     return (
         <div>
             <Box component="fieldset" mb={3} borderColor="transparent">
-                <Typography component="legend">Rate this Hike:</Typography>
+                <div >
+                <h3>Rate this Hike:</h3>
+                </div>
                 <Rating
                     name="simple-controlled"
                     size="large"
                     value={value}
                     onChange={() => handleChange(event)}
                 />
+            
             </Box>
+            
         </div>
     )
 }

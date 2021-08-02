@@ -5,8 +5,15 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'fantasy', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-image: url("https://i.imgur.com/iVbr9sz.png");
+  background-position: center;
+  background-attachment: fixed;
+
+
+  /* background-image: url ("lake.png"); */
+  /* background-color: #DCE1E3; */
 }
 
 img {
@@ -14,12 +21,115 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  font-family: fantasy;
+  font-style: bold;
+  border: solid white 2px;
+  border-radius: 10px;
+  
+  color: white;
+  background-color: rgb(46, 71, 78, 0.8);
+  /* background-color: rgb(47, 72, 79, 0.8); */
+  /* border: solid black 2px;
+  border-radius: 10px; */
+  /* background-color: rgb(204, 204, 204, 0.8); */
+  
+}
+
+h2 {
+  text-align: center;
+  font-family: fantasy;
+  border: solid white 2px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(46, 71, 78, 0.8);
+ /* background-color: rgb(204, 204, 204, 0.8); */
+
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  border: solid white 2px;
+  border-radius: 10px;
+  background-color: rgb(46, 71, 78, 0.8);
+   /* border: solid black 2px;
+  border-radius: 10px; */
+  /* background-color: rgb(204, 204, 204, 0.8); */
+}
+
+h4 {
+  text-align: center;
+   color: white;
+  border: solid white 2px;
+  border-radius: 10px;
+  background-color: rgb(46, 71, 78, 0.8);
+  /* background-color: rgb(204, 204, 204, 0.8); */
+}
+
+h5 {
+  text-align: center;
+  font-family: fantasy;
+}
+
+p {
+  margin-right: 10px;
+  margin-left: 10px;
+  border: solid black 2px;
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204, 0.8);
+  text-align: center;
+  padding: 10px;
+
+}
+
+/* header {
+  background-image: ;
+} */
+
 /* --------------------------------------------------------------------------------
 Container
 -------------------------------------------------------------------------------- */
 
 .container {
   padding: 20px;
+}
+
+.list-container {
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: rgb(204, 204, 204, 0.8);
+}
+
+.hike-container {
+  margin-bottom: 10px;
+  border: solid black 2px;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: rgb(204, 204, 204, 0.8);
+}
+
+.rating-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  /* padding-bottom: 0px;
+  border-bottom-width: 0px; */
+  
+}
+
+.center-container {
+  text-align: center;
+}
+
+.style-container {
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204, 0.8);
 }
 
 /* --------------------------------------------------------------------------------
@@ -111,3 +221,6 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+
+

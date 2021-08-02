@@ -28,7 +28,7 @@ function Nav() {
   const useStyles = makeStyles({
     list: {
       width: "13em",
-      backgroundColor: '#3fc2c9',
+      backgroundColor: '#97f3fb',
     },
     text: {
       color: '#000'
@@ -69,7 +69,7 @@ function Nav() {
           className={classes.text}
           component="button"
           variant="body1"
-          onCLick={() => {history.push('/homePage')}}
+          onClick={() => {history.push('/homePage')}}
           >
             Home
           </Link>
@@ -99,7 +99,7 @@ function Nav() {
       
       <List>
         <ListItem>
-          Welcome {user.username}
+          Welcome, {user.username}!
         </ListItem>
 
         <ListItem>
@@ -108,7 +108,7 @@ function Nav() {
               className={classes.text}
               component="button"
               variant="body1"
-              onClick={() => { history.push('/') }}
+              onClick={() => { history.push('/homePage') }}
             >
               Home
             </Link>
@@ -148,7 +148,6 @@ function Nav() {
           </ListItem>
 
           <ListItem>
-            <InfoIcon />
             <Link
               className={classes.text}
               component="button"

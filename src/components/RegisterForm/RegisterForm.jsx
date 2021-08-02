@@ -48,6 +48,13 @@ function RegisterForm() {
   }; // end registerUser
 
   return (
+    <Grid
+      container
+      className={classes.root}
+      spacing={2}
+      alignItems="center"
+      direction="column"
+    >
     <form className="formPanel" onSubmit={registerUser}>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
@@ -82,7 +89,7 @@ function RegisterForm() {
           margin="dense"
         />
       </div>
-      <Box m={3} />
+      <Box m={1} />
       <div>
         <Button
           className="btn"
@@ -97,6 +104,7 @@ function RegisterForm() {
         </Button>
       </div>
     </form>
+    </Grid>
   );
 }
 

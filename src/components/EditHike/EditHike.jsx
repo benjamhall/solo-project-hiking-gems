@@ -3,12 +3,37 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 // Material UI imports
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import { PlayCircleFilledWhite } from '@material-ui/icons';
 
 
 // This function handles Editing and updating the information for a hike
 function EditHike() {
+
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& .MuiTextField-root': {
+                margin: theme.spacing(1),
+                width: '25ch',
+            },
+        },
+        textField: {
+            width: 300,
+            backgroundColor: 'white',
+        },
+        button: {
+            margin: theme.spacing(1),
+        },
+    }));
+
+    const classes = useStyles();
+    //End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -20,6 +45,14 @@ function EditHike() {
     const handleEdit = (event, newTrailInfo) => {
         // Dispatches the Edit with the new information to the 
         dispatch({ type: 'EDIT_ON_CHANGE', payload: { property: newTrailInfo, value: event.target.value } })
+    }
+
+    // This function handles the cancel button which upon click will bring the user back to the home page
+    const handleCancel = () => {
+        console.log('cancel button clicked')
+
+        //Routes the user back to the home page
+        history.goBack()
     }
 
     // This function handles the Submit button 
@@ -36,15 +69,40 @@ function EditHike() {
     }
 
     return (
-        <div>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+        <Grid item xs={12}>
             <h2>Edit</h2>
+        </Grid>
             <form>
-                <TextField onChange={(event) => handleEdit(event, 'name')} value={trail.name} type="text" placeholder="Edit Trail Name" />
-                <TextField onChange={(event) => handleEdit(event, 'location')} value={trail.location} type="text" placeholder="Edit Trail Location" />
-                <TextField onChange={(event) => handleEdit(event, 'description')} value={trail.description} type="text" placeholder="Edit Trail Description" />
-                <Button onClick={handleSubmit}>Submit</Button>
+                <TextField onChange={(event) => handleEdit(event, 'name')} 
+                    value={trail.name} 
+                    type="text" placeholder="Edit Trail Name" variant="outlined" className={classes.textField} />
+                <br />
+
+                <TextField onChange={(event) => handleEdit(event, 'location')} 
+                    value={trail.location} 
+                    type="text" placeholder="Edit Trail Location" variant="outlined" className={classes.textField} />
+                <br />
+
+                <TextField onChange={(event) => handleEdit(event, 'description')} 
+                    value={trail.description} 
+                    type="text" multiline rows={8} placeholder="Edit Trail Description" variant="outlined" className={classes.textField} />
+                <br />
             </form>
-        </div>
+
+              <div>
+                <Box>
+                    <Button onClick={handleCancel} type="submit" variant="contained" color="primary" className={classes.button} >Cancel</Button>
+                    <Button onClick={handleSubmit} type="submit" variant="contained" color="primary" className={classes.button}>Submit</Button>
+                </Box>
+              </div>
+        </Grid>
     );
 }
 

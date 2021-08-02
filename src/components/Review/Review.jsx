@@ -2,14 +2,35 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+// Material UI imports
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
 
 
 function Review() {
+
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            flexGrow: 1,
+        },
+        control: {
+            padding: theme.spacing(2),
+            margin: 'auto',
+        },
+        button: {
+            margin: theme.spacing(1),
+        },
+
+    }));
+
+    const classes = useStyles();
+    // End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
- 
+
     const trail = useSelector((store) => store.trails);
 
     useEffect(() => {
@@ -25,8 +46,8 @@ function Review() {
             confirmButtonText: 'Yes!',
             showCancelButton: true,
         }).then((result) => {
-            
-            if(result.value) {
+
+            if (result.value) {
                 Swal.fire({
                     title: "hike deleted",
                     icon: "success",
@@ -41,33 +62,41 @@ function Review() {
     // This function handles the edit button
     const handleEdit = (event, trail) => {
         console.log('trail', trail)
-        
+
         // Dispatches the Edit Hike type to the edit reducer sending the information of trail in the payload
-        dispatch({type: 'EDIT_HIKE', payload: trail})
+        dispatch({ type: 'EDIT_HIKE', payload: trail })
         // Sends the user to the edit page
         history.push('/edit');
     }
 
- 
+
     return (
-        
-        <div>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
             <h2>Review and Edit Page:</h2>
             <form>
-            <div>
-                {trail?.map(trail => {
-                    return(
-                    <div key={trail?.id}>
-                        <p>{trail?.name}</p>
-                        <p>{trail?.location}</p>
-                        <p>{trail?.description}</p>
-                        <Button onClick={(event) => handleEdit(event, trail)}>Edit</Button>
-                        <Button onClick={() => handleDelete(trail)}>Delete</Button>
-                    </div>
-                )})}
-            </div>
+                <div>
+                    {trail?.map(trail => {
+                        return (
+                            <div key={trail?.id} className={"hike-container"}>
+                                <h3>{trail?.name}</h3>
+                                <h4>{trail?.location}</h4>
+                                <p>{trail?.description}</p>
+                                <div className={"center-container"}>
+                                    <Button onClick={(event) => handleEdit(event, trail)} type="submit" variant="contained" color="primary" className={classes.button} >Edit</Button>
+                                    <Button onClick={() => handleDelete(trail)} type="submit" variant="contained" color="primary" className={classes.button} >Delete</Button>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </form>
-        </div>
+        </Grid>
     );
 }
 

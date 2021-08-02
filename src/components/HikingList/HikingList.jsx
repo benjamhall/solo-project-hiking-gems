@@ -5,14 +5,45 @@ import { useHistory } from 'react-router-dom';
 import MyRatings from '../MyRatings/MyRatings';
 import TrailRating from '../TrailRating/TrailRating';
 // Material UI imports
-import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import { Button } from '@material-ui/core';
+import { Card } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
 
 // This function lists all of the hiking trails 
 function HikingList() {
+    
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            flexGrow: 1,
+        },
+        control: {
+            padding: theme.spacing(0),
+            margin: 'auto',
+        },
+        absolute: {
+            position: 'absolute',
+            bottom: theme.spacing(2),
+            right: theme.spacing(3),
+        },
+    }));
+
+    const classes = useStyles();
+    // End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
+
+    // Get the Trails information from the reducer so we can render it
     const trails = useSelector(store => store.trails);
-    // const ratings = useSelector(store => store.ratings);
 
     // Upon page load, this function dispatches "fetch trails" command to the generator function 
     useEffect(() => {
@@ -33,23 +64,35 @@ function HikingList() {
     }
 
     return (
-        <main>
-            <div>
+        <div className={"center-container"}>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+            <Grid item xs={12}>
                 <h2>Hiking List:</h2>
-            </div>
-            <section>
+            </Grid>
+            <Grid item xs={12}>
                 <ol>
                     {trails.map(hike => {
                         return (
-                            <li key={hike.id}>{hike.name}: {hike.location} 
-                                {/* <MyRatings /> */}
-                                <TrailRating value={hike.ratings}/>
-                                <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="secondary">Learn More</Button></li>
+                            <li key={hike.id} className={"hike-container"}>
+                                    {hike.name}: {hike.location}
+
+                                    <TrailRating value={hike.ratings} />
+
+                                    <Button onClick={event => hikeDetails(hike)} type="submit" variant="contained" color="primary">Learn More</Button>
+                            </li>
+
                         )
                     })}
                 </ol>
-            </section>
-        </main>
+            </Grid>
+        </Grid>
+        </div>
     );
 }
 

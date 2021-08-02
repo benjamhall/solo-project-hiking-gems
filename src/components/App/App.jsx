@@ -14,12 +14,15 @@ import { useDispatch } from 'react-redux';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
+// import Logo from '../../images/lake.png';
+
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AddHike from '../AddHike/AddHike';
 import AboutPage from '../AboutPage/AboutPage'
 import EditHike from '../EditHike/EditHike';
 import FavoriteHikes from '../FavoriteHikes/FavoriteHikes';
+import Header from '../Header/Header';
 import HikeDetails from '../HikeDetails/HikeDetails';
 import HikingList from '../HikingList/HikingList';
 import HomePage from '../HomePage/HomePage';
@@ -65,8 +68,8 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
-        <div>
           <Nav />
+          <Header />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
@@ -85,7 +88,7 @@ function App() {
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
             Even though it seems like they are different pages, the user is always on localhost:3000/user */}
             <ProtectedRoute
-              // logged in shows UserPage else shows LoginPage
+              // logged in shows HomePage else shows LoginPage
               exact
               path="/homePage"
             >
@@ -198,7 +201,6 @@ function App() {
             </Route>
           </Switch>
           <Footer />
-        </div>
       </Router>
     </MuiThemeProvider>
   );

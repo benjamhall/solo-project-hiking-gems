@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+// Material UI imports
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { spacing } from '@material-ui/system';
 
 
 function AddHike() {
+    // Material UI
+    const useStyles = makeStyles((theme) => ({
+        button: {
+            margin: theme.spacing(1),
+        },
+        textField: {
+            width: 300,
+            backgroundColor: 'white',
+        },
+    }));
+
+    const classes = useStyles();
+    //End Material UI
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -50,33 +69,49 @@ function AddHike() {
         console.log('save button clicked')
 
         // Dispatches the information from the inputs to the reducer
-        dispatch({type: 'POST_HIKE', payload: {name: name, location: location, description: description}})
+        dispatch({ type: 'POST_HIKE', payload: { name: name, location: location, description: description } })
 
         // Sends the user to the Review Page
         history.push('/review')
     }
 
     return (
-        <div>
-            <h2>Add a Hike</h2>
-            <p>Please Fill Out This Form to Submit a New Hiking Trail:</p>
+        <Grid
+            container
+            className={classes.root}
+            spacing={2}
+            alignItems="center"
+            direction="column"
+        >
+        
+            <Grid item xs={12}>
+                <h2>Add a Hike:</h2>
+            </Grid>
+                {/* <h4>Fill Out This Form to Submit a New Hiking Trail:</h4> */}
+            
             <form>
-                <TextField value={name}
-                onChange ={handleNameChange}
-                id="outlined-name" label="Hiking Trail Name" variant="outlined" />
-
-                <TextField value={location}
-                onChange={handleLocationChange}
-                id="outlined-location" label="Location" variant="outlined" />
-
-                <TextField value={description}
-                onChange={handleDescriptionChange}
-                id="outlined-basic" label="Description of Trail" variant="outlined" />
-
+                    <TextField value={name}
+                        onChange={handleNameChange}
+                    id="outlined-name" label="Hiking Trail Name" variant="outlined" className={classes.textField} />
+                <br />
+                    <TextField value={location}
+                        onChange={handleLocationChange}
+                    id="outlined-location" label="Location" variant="outlined" className={classes.textField} />
+                <br />
+                    <TextField value={description}
+                        onChange={handleDescriptionChange}
+                    id="outlined-basic" label="Description of Trail" multiline rows={8} variant="outlined" className={classes.textField} />
+                <br />
             </form>
-            <Button onClick={handleCancel} type="submit" variant="contained" color="secondary">Cancel</Button>
-            <Button onClick={postHike} type="submit" variant="contained" color="secondary">Save</Button>
-        </div>
+
+            <div>
+                <Box>
+                    <Button onClick={handleCancel} type="submit" variant="contained" color="primary" className={classes.button} >Cancel</Button>
+                    <Button onClick={postHike} type="submit" variant="contained" color="primary" className={classes.button} >Save</Button>
+                </Box>
+            </div>
+        
+        </Grid>
     );
 }
 
