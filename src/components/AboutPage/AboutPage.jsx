@@ -36,7 +36,7 @@ function AboutPage() {
         <h2>Welcome Adventurer!</h2>
       </Grid>
       <Grid item xs={9}>
-        <p> Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails</p> 
+        <p> Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails.</p> 
 
         <Grid item xs={12}>
           <h2>Technology Used:</h2>
