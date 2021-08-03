@@ -10,12 +10,13 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+// This function handles the My Ratings for each individual hike
 
 function MyRatings ({detailsId, value}) {
     const dispatch = useDispatch();
     const history = useHistory();
     
-
+    // Upon clicking a star to rate a particular hike, the star rating is sent to the add Rating saga
     const handleChange = (event) => {
         console.log('star clicked')
         dispatch({
