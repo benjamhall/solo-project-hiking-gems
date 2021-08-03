@@ -87,7 +87,6 @@ function AddHike() {
             <Grid item xs={12}>
                 <h2>Add a Hike:</h2>
             </Grid>
-                {/* <h4>Fill Out This Form to Submit a New Hiking Trail:</h4> */}
             
             <form>
                     <TextField value={name}

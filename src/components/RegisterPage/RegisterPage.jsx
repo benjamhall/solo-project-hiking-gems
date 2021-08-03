@@ -39,7 +39,6 @@ function RegisterPage() {
       <p>
         Have you ever wanted to know the best hidden Hiking Trails in Minnesota? If so, come join us!</p>
 
-      {/* <p> Come join our Hiking Community of Adventurers who are dedicated to sharing the best hiking trails around to help you get out and enjoy spending time in nature.</p> */}
       <RegisterForm />
 
       <center>
