@@ -5,8 +5,12 @@ Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautif
  
 ![Register](/public/images/Register.png)
 ![Landing Page](/public/images/LandingPage.png)
-![Mission View](/public/images/feedback3.png)
-![Another View?](/public/images/feedback4.png)
+![Hiking List](/public/images/HikingList.png)
+![Hike Details](/public/images/Details.png)
+![Favorites Page](/public/images/Favorite.png)
+![Ratings](/public/images/Ratings.png)
+![Add Hike](/public/images/AddHike.png)
+![Edit Page](/public/images/Edit.png)
 
 ## Contributor 
 Ben Hall
