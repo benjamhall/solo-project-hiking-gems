@@ -26,7 +26,8 @@ Before getting started launching this application, you should have the following
 - [PostgreSQL](https://www.postgresql.org)
  
 # Database Setup
-Create a new database called `ether-frolics` in PostgreSQL and use the `database.sql` file in the root of the project to create your tables.
+Create a new database called `hiking-gems` in PostgreSQL and use the `database.sql` file in the root of the project to create your tables.
+
 # Acknowledgement
 Thank you to Prime Digital Academy who equipped me with the tools to build this application.
 
