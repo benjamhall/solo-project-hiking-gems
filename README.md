@@ -16,7 +16,7 @@ Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautif
 Ben Hall
 
 ## Technology Used
-JavaScript, ReactJS, Redux, NodeJS, Express, PostgreSQL, Material UI, Redux Sagas, bodyParser, HTML and CSS. 
+JavaScript, ReactJS, Redux, NodeJS, Express, PostgreSQL, Material UI, Redux Sagas, React-Router, HTML and CSS. 
 
 # Prerequisites
 Before getting started launching this application, you should have the following software installed on your computer: 
