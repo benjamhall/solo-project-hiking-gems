@@ -1,6 +1,6 @@
 # Hidden Hiking Gems Solo Project
 
-Hidden Hiking Gems is a mobile friendly app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails.
+Hidden Hiking Gems is a mobile friendly web app designed to help hikers find beautiful hidden hiking trails and to a place to rate and keep track of their favorite trails.
 ## Screen Shot
  
 ![Register](/public/images/Register.png)
