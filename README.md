@@ -33,5 +33,5 @@ Create a new database called `hiking-gems` in PostgreSQL and use the `database.s
 Thank you to Prime Digital Academy who equipped me with the tools to build this application.
 
 ## Support
-If you have suggestions or issues, please email me at benjamhall@gmail.com
+If you have suggestions or questions, please email me at benjamhall@gmail.com
 
